@@ -114,6 +114,54 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MapList> List => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MapList>>(_publishedValueFallback, "list");
 
 		///<summary>
+		/// Map Icon Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapIconDescription")]
+		public virtual string MapIconDescription => this.Value<string>(_publishedValueFallback, "mapIconDescription");
+
+		///<summary>
+		/// Map Icon Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapIconImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MapIconImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "mapIconImage");
+
+		///<summary>
+		/// Map Icon Subtitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapIconSubtitle")]
+		public virtual string MapIconSubtitle => this.Value<string>(_publishedValueFallback, "mapIconSubtitle");
+
+		///<summary>
+		/// Map Icon Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapIconTitle")]
+		public virtual string MapIconTitle => this.Value<string>(_publishedValueFallback, "mapIconTitle");
+
+		///<summary>
+		/// Map Icon Video
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapIconVideo")]
+		public virtual string MapIconVideo => this.Value<string>(_publishedValueFallback, "mapIconVideo");
+
+		///<summary>
+		/// Map Location
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapLocation")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel MapLocation => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "mapLocation");
+
+		///<summary>
 		/// Offers Caption
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
@@ -264,6 +312,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("touchdown4Image")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops Touchdown4Image => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "touchdown4Image");
+
+		///<summary>
+		/// TouchDown4 MainContent
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("touchDown4MainContent")]
+		public virtual string TouchDown4MainContent => this.Value<string>(_publishedValueFallback, "touchDown4MainContent");
 
 		///<summary>
 		/// Touchdown4 Title
