@@ -3,25 +3,27 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "main.cshtml";
-	    var slide = (ContentModels.VerticalSlide)Model.Root().Children().Where(x =>
-    x.IsDocumentType("verticalSlide")).FirstOrDefault();
-		    var bucketList = (ContentModels.BucketListHotspots)Model.Root().Children().Where(x =>
-    x.IsDocumentType("bucketListHotspots")).FirstOrDefault();
-			    var home = (ContentModels.HomePage)Model.Root().Children().Where(x =>
-    x.IsDocumentType("homepage")).FirstOrDefault();
+	var slide = (ContentModels.VerticalSlide)Model.Root().Children().Where(x =>
+            x.IsDocumentType("verticalSlide")).FirstOrDefault();
+	var bucketList = (ContentModels.BucketListHotspots)Model.Root().Children().Where(x =>
+            x.IsDocumentType("bucketListHotspots")).FirstOrDefault();
+    var dynamicSlide = (ContentModels.DynamicSlideList)Model.Root().Children().Where(x =>
+            x.IsDocumentType("dynamicSlideList")).FirstOrDefault();
+	var home = (ContentModels.HomePage)Model.Root().Children().Where(x =>
+            x.IsDocumentType("homepage")).FirstOrDefault();
 }
     <body>
-        <section class="banner_style home_banner" style="margin-bottom: 0px;">
+        <section class="banner_style home_banner" style="margin-bottom: 0px; background-image: url(@home.HomepageMainImage.Url()">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="banner_container">
                             <div class="container">
-                                <h1><span> Welcome to the world’s </span> Leading Adventure Destination</h1>
-                                <div class="highlight">Home to 3000 adventures & more!</div>
-                                <p>Revel in the majesty of nature, take a walk on the wild side, and do things that you’ve never done before. In South Africa, your next great adventure is always waiting to happen!</p>
-                                <a data-fancybox data-small-btn="true" class="btnFillup liquidbg" href="@home.VideoLink.Url">
-
+                                <h1><span> @home.HomepageTitle</span> @home.HomepageSubtitle</h1>
+                                <div class="highlight">@home.HomepageBoxTitle</div>
+                                <p>@home.HomepageDescription</p>
+                                <a data-fancybox data-small-btn="true" class="btnFillup liquidbg" 
+                                    href="@home.VideoLink.Url">
                                     Watch Video
                                     <div class="icon"></div>
                                 </a>
@@ -38,91 +40,28 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h1>South Africa <span> has a lot more to offer! </span></h1>
+                        <h1>@home.OffersHeading<span>@home.OffersSubHeading</span></h1>
                     </div>
                 </div>
                 <div class="row animatedParent">
                     <div class="col-md-4 col-12 left_content_wrp animated fadeInUpShort">
-                        <h4>We are many worlds in one.</h4>
-                        <p>Where lush green forests coexist with sandy deserts. Where you can go diving with sharks, or stroll along the beach.</p>
-                        <p>Known as ‘The Rainbow Nation’, South Africa is where you get to explore who you are and discover who you want to be.</p>
+                        <h4>@home.OffersCaption</h4>
+                        <p>@home.OffersDescription</p>
                     </div>
                     <div class="col-md-7 offset-md-1 col-12 right_slider_wrp animated fadeInRightShort">
                         <div class="Home_offer_slider">
+                            @foreach (ContentModels.DynamicSlide item in dynamicSlide.Children())
+                            {
                             <div class="slide">
                                 <div class="image_style">
                                     <div class="caption">
-                                        <h3>Active Adventure</h3>
-                                        <p>Comfort zones? Never heard of them! Adrenaline junkies, this one’s for you.</p>
+                                        <h3>@item.DynamicSlideTitle</h3>
+                                        <p>@item.DynamicSlideDescription</p>
                                     </div>
-
-                                    <img src="assets/images/offers_slide_01.jpg" class="image" />
+                                <img src="@item.DynamicImage.Url()" class="image" />
                                 </div>
                             </div>
-
-                            <!--  -->
-
-                            <div class="slide">
-                                <div class="image_style">
-                                    <div class="caption">
-                                        <h3>City Lifestyle</h3>
-                                        <p>Electric, vibrant, lively, and never boring! Explore the best of our cities.</p>
-                                    </div>
-                                    <img src="assets/images/offers_slide_02.jpg" class="image" />
-                                </div>
-                            </div>
-
-                            <!--  -->
-
-                            <div class="slide">
-                                <div class="image_style">
-                                    <div class="caption">
-                                        <h3>Cultural Roots</h3>
-                                        <p>Who are we? What makes us South African? Find out here!</p>
-                                    </div>
-
-                                    <img src="assets/images/offers_slide_03.jpg" class="image" />
-                                </div>
-                            </div>
-
-                            <!--  -->
-
-                            <div class="slide">
-                                <div class="image_style">
-                                    <div class="caption">
-                                        <h3>Wildlife Safari</h3>
-                                        <p>Explore South Africa at its very best - wild and free!</p>
-                                    </div>
-
-                                    <img src="assets/images/offers_slide_04.jpg" class="image" />
-                                </div>
-                            </div>
-
-                            <!--  -->
-
-                            <div class="slide">
-                                <div class="image_style">
-                                    <div class="caption">
-                                        <h3>Scenic Outdoors</h3>
-                                        <p>Mountains, valleys, lakes and trees; when it comes to nature, South Africa is the place to be!</p>
-                                    </div>
-
-                                    <img src="assets/images/offers_slide_05.jpg" class="image" />
-                                </div>
-                            </div>
-
-                            <!--  -->
-
-                            <div class="slide">
-                                <div class="image_style">
-                                    <div class="caption">
-                                        <h3>Coastal Beaches</h3>
-                                        <p>Get a healthy dose of Vitamin B-EACH with soft white sands and sparkling seas.</p>
-                                    </div>
-
-                                    <img src="assets/images/offers_slide_06.jpg" class="image" />
-                                </div>
-                            </div>
+                            }                             
                         </div>
                     </div>
                 </div>
@@ -230,9 +169,9 @@
                             <div class="col-md-12">
                                 <div class="image_effect">
                                     <figure class="effect-ruby">
-                                        <img src="assets/images/touchdown_img_01.jpg" />
+                                        <img src="@home.Touchdown1Image.Url()"/>
                                         <figcaption>
-                                            <h2>VISA & IMMIGRATION <span> Hassle-free processes for the perfect vacation. </span></h2>
+                                            <h2>@home.Touchdown1Title <span> @home.Touchdown1Content </span></h2>
 
                                             <div class="hidden">
                                                 <div class="button">
@@ -249,9 +188,9 @@
                             <div class="col-md-12">
                                 <div class="image_effect">
                                     <figure class="effect-ruby">
-                                        <img src="assets/images/touchdown_img_02.jpg" />
+                                        <img src="@home.Touchdown2Image.Url()" />
                                         <figcaption>
-                                            <h2>INTERNATIONAL TRAVEL UPDATES <span> Everything you need to know. </span></h2>
+                                            <h2>@home.Touchdown2Title <span> @home.Touchdown2Content</span></h2>
                                             <div class="hidden">
                                                 <div class="button">
                                                     <a href="@home.Touchdown2.Url"> <i class="fa fa-long-arrow-right"></i> </a>
@@ -269,9 +208,9 @@
                             <div class="col-12">
                                 <div class="image_effect">
                                     <figure class="effect-ruby">
-                                        <img src="assets/images/touchdown_img_05.jpg" />
+                                        <img src="@home.Touchdown3Image.Url()" />
                                         <figcaption>
-                                            <h2>INTERNATIONAL TRAVEL UPDATES <span> Everything you need to know. </span></h2>
+                                            <h2>@home.Touchdown3Title <span> @home.Touchdown3Content </span></h2>
                                             <div class="hidden">
                                                 <div class="button">
                                                     <a href="@home.Touchdown3.Url"> <i class="fa fa-long-arrow-right"></i> </a>
@@ -287,15 +226,9 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="image_effect">
                                             <figure class="effect-ruby">
-                                                <img src="assets/images/touchdown_img_03.jpg" />
+                                                <img src="@home.Touchdown4Image.Url()" />
                                                 <figcaption>
-                                                    <h2>
-                                                        GETTING HERE
-                                                        <span>
-                                                            Flights to South Africa: <br />
-                                                            Fly into the Rainbow Nation on great deals.
-                                                        </span>
-                                                    </h2>
+                                                    <h2>@home.Touchdown4Title <span>@home.Touchdown4Content</span></h2>
                                                     <div class="hidden">
                                                         <div class="button">
                                                             <a href="@home.Touchdown4.Url"> <i class="fa fa-long-arrow-right"></i> </a>
@@ -310,9 +243,9 @@
                                     <div class="col-md-6 col-xs-12">
                                         <div class="image_effect">
                                             <figure class="effect-ruby">
-                                                <img src="assets/images/touchdown_img_04.jpg" />
+                                                <img src="@home.Touchdown5Image.Url()" />
                                                 <figcaption>
-                                                    <h2>GETTING AROUND <span> Discover South Africa by road, train or air. </span></h2>
+                                                    <h2>@home.Touchdown5Title <span> @home.Touchdown5Content </span></h2>
                                                     <div class="hidden">
                                                         <div class="button">
                                                             <a href="@home.Touchdown5.Url"> <i class="fa fa-long-arrow-right"></i> </a>
