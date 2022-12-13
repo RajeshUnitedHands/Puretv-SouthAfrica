@@ -50,13 +50,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Best Time To Visit
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
-		[ImplementPropertyType("bestTimeToVisit")]
-		public virtual global::System.DateTime BestTimeToVisit => this.Value<global::System.DateTime>(_publishedValueFallback, "bestTimeToVisit");
-
-		///<summary>
 		/// Budget
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
@@ -103,5 +96,19 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("title")]
 		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
+
+		///<summary>
+		/// Visit From Time
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[ImplementPropertyType("visitFromTime")]
+		public virtual global::System.DateTime VisitFromTime => this.Value<global::System.DateTime>(_publishedValueFallback, "visitFromTime");
+
+		///<summary>
+		/// Visit To Time
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[ImplementPropertyType("visitToTime")]
+		public virtual global::System.DateTime VisitToTime => this.Value<global::System.DateTime>(_publishedValueFallback, "visitToTime");
 	}
 }
