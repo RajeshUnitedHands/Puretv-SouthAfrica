@@ -170,12 +170,20 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string OffersCaption => this.Value<string>(_publishedValueFallback, "offersCaption");
 
 		///<summary>
-		/// Offers Description
+		/// Offers Description1
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("offersDescription")]
 		public virtual string OffersDescription => this.Value<string>(_publishedValueFallback, "offersDescription");
+
+		///<summary>
+		/// Offers Description2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("offersDescription2")]
+		public virtual string OffersDescription2 => this.Value<string>(_publishedValueFallback, "offersDescription2");
 
 		///<summary>
 		/// Offers Heading
