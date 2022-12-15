@@ -1,0 +1,590 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "main.cshtml";
+    var revealed = (ContentModels.SouthAfricaRevealed)Model.Root().Children().Where(x =>
+            x.IsDocumentType("southAfricaRevealed")).FirstOrDefault();
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+        <!-- bootstrap css file -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <!-- all.min.css file -->
+        <link rel="stylesheet" href="assets/css/all.min.css" />
+
+        <!-- style.css file -->
+        <link rel="stylesheet" href="assets/css/mystyle.css" />
+        <link rel="stylesheet" href="assets/css/media_query.css" />
+        <link rel="stylesheet" href="assets/css/menu.css" />
+        <link rel="stylesheet" href="assets/css/fancybox.css" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link href="assets/css/slick.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="assets/css/animations.css" type="text/css" />
+        <!-- <link rel="stylesheet" href="assets/css/ScrollTrigger.css"> -->
+        <title>South Africa</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="main-header">
+                            <div class="menu_wrp">
+                                <input type="checkbox" class="menu-btn" id="menu-btn" />
+                                <label for="menu-btn" class="menu-icon">
+                                    <span class="menu-icon__line"></span>
+                                </label>
+
+                                <ul class="nav-links">
+                                    <li class="nav-link">
+                                        <a href="revealed.html"> South Africa: Revealed </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="#"> Getting Around </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="travel-trade-partners.html"> Travel Trade Partners </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="#"> Blog </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="newsroom.html"> Newsroom </a>
+                                    </li>
+                                    <li class="nav-link">
+                                        <a href="contact-us.html"> Contact Us </a>
+                                    </li>
+                                </ul>
+
+                                <div class="search_icon">
+                                    <a data-fancybox data-src="#trueModal" href="javascript:;"> <i class="fa fa-search" aria-hidden="true"></i> </a>
+                                </div>
+
+                                <div class="search_popup" style="display: none;" id="trueModal">
+                                    <form class="search-container">
+                                        <input type="text" id="search-bar" placeholder="Search..." />
+                                        <a href="#">
+                                            <div class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                                        </a>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="assets/images/Logo.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="banner_style" style="background-image:url(@revealed?.RevealedImage.Url())">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="banner_container">
+                            <div class="container">
+                                <h1><span style="display: inline-block;">@revealed?.RevealedTitle </span>@revealed?.RevealedSubtitle</h1>
+
+                                <!--  -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  -->
+
+        <div>
+            <div class="revealded_Nav_bar">
+                <ul>
+                    <li><a href="#Rainbow_Nation"> The Rainbow Nation </a></li>
+                    <li><a href="#Seasons_South_Africa"> Seasons In South Africa </a></li>
+                    <li><a href="#Geography"> Geography</a></li>
+                    <li><a href="#Currency"> Currency</a></li>
+                    <li><a href="#Taste_Adventure"> A Taste of Adventure </a></li>
+                    <li><a href="#Getting_Around"> Getting Around </a></li>
+                </ul>
+            </div>
+        </div>
+
+        <section class="revealded_top_sec" id="Rainbow_Nation">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 NoPadMar">
+                        <div class="caption_wrp">
+                            <h1>@revealed?.RainbowTitle</h1>
+
+                            <p>@revealed?.RainbowContent</p>
+                        </div>
+
+                        <div class="revealed_carousel animatedParent">
+                            <div class="slide animated fadeInUpShort">
+                                <div class="caption">@revealed?.FirstImageTitle</div>
+                                <div class="image_style">
+                                    <img src="@revealed?.FirstImage.Url()" class="image" />
+                                </div>
+                            </div>
+
+                            <div class="slide animated fadeInUpShort">
+                                <div class="caption">@revealed?.SecondImageTitle</div>
+                                <div class="image_style">
+                                    <img src="@revealed?.SecondImage.Url()" class="image" />
+                                </div>
+                            </div>
+
+                            <div class="slide animated fadeInUpShort">
+                                <div class="caption">@revealed?.ThirdImageTitle</div>
+                                <div class="image_style">
+                                    <img src="@revealed?.ThirdImage.Url()" class="image" />
+                                </div>
+                            </div>
+
+                            <div class="slide animated fadeInUpShort">
+                                <div class="caption">@revealed?.FourthImageTitle</div>
+                                <div class="image_style">
+                                    <img src="@revealed?.FourthImage.Url()" class="image" />
+                                </div>
+                            </div>
+
+                            <div class="slide animated fadeInUpShort">
+                                <div class="caption">@revealed?.FifthImageTitle</div>
+                                <div class="image_style">
+                                    <img src="@revealed?.FifthImage.Url()" class="image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  -->
+
+        <section id="Seasons_South_Africa" class="animatedParent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="sec_heading">
+                            <h1>@revealed?.SeasonTitle</h1>
+                        </div>
+
+                        <p>@revealed?.SeasonContent</p>
+
+                        <div class="revealded_thumb animated fadeInUpShort">
+                            <figure class="effect-lily">
+                                <img src="@revealed?.SpringSeason.Url()"/>
+                                <figcaption>
+                                    <div>
+                                        <h2>@revealed?.SpringTitle</h2>
+                                        <p> @revealed?.SpringContent <br/></p>
+                                    </div>
+                                    <a href="#">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="revealded_thumb animated fadeInUpShort">
+                            <figure class="effect-lily">
+                                <img src="@revealed?.SummerSeason.Url()" />
+                                <figcaption>
+                                    <div>
+                                        <h2>@revealed?.SummerTitle</h2>
+                                        <p> @revealed?.SummerContent <br /></p>
+                                    </div>
+                                    <a href="#">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="revealded_thumb animated fadeInUpShort">
+                            <figure class="effect-lily">
+                                <img src="@revealed?.AutumnSeason.Url()" />
+                                <figcaption>
+                                    <div>
+                                        <h2>@revealed?.AutumnTitle</h2>
+                                        <p> @revealed?.AutumnContent <br /></p>
+                                    </div>
+                                    <a href="#">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="revealded_thumb">
+                            <figure class="effect-lily">
+                                <img src="@revealed?.WinterSeason.Url()" />
+                                <figcaption>
+                                    <div>
+                                        <h2>@revealed?.WinterTitle</h2>
+                                        <p> @revealed?.WinterContent <br/></p>
+                                    </div>
+                                    <a href="#">View more</a>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  -->
+
+        <!-- Geography -->
+        <section class="Geography_style" id="Geography">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 NoPadMar center_text">
+                        <div class="left_content">
+                            <div class="sec_heading">
+                                <h1>@revealed?.GeographyTitle</h1>
+                            </div>
+
+                            <p> @revealed?.GeographyContent</p>
+                        </div>
+
+                        <div class="map_wrp">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6950242.625122249!2d21.453251781426363!3d-28.894922396747678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1c34a689d9ee1251%3A0xe85d630c1fa4e8a0!2sSouth%20Africa!5e0!3m2!1sen!2sin!4v1664808261104!5m2!1sen!2sin"
+                                style="border: 0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Currency -->
+        <section class="Currency_style" id="Currency">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 center_text">
+                        <div class="left_content">
+                            <div class="sec_heading">
+                                <h1>@revealed?.CurrencyTitle</h1>
+                            </div>
+
+                            <p>@revealed?.CurrencyDescription</p>
+                                
+                        </div>
+
+                        <div class="Currency_right">
+                            <div class="Rand_style">1 South African Rand equals</div>
+                            <div class="INR_style">4.91 Indian Rupee</div>
+                            <span> 12 Aug, 10:00 am UTC · Disclaimer </span>
+
+                            <div class="input_wrp_box">
+                                <div class="input_style"><input type="text" placeholder="1" /></div>
+                                <div class="right_map">South Africa Rand <img src="assets/images/south_africa.png" /></div>
+                            </div>
+
+                            <div class="input_wrp_box">
+                                <div class="input_style"><input type="text" placeholder="4.91" /></div>
+                                <div class="right_map">India <img src="assets/images/india.png" /></div>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <button class="btn_style">Convert</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="Taste_Adventure animatedParent mb-0" id="Taste_Adventure">
+            <div class="container-fluid">
+                <div class="row animatedParent">
+                    <div class="col-12 NoPadMar">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="sec_heading white_text">
+                                        <h1>A Taste of Adventure</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="Adventure_slider animated fadeInRightShort">
+                            <div class="slide">
+                                <div class="thumbnail_style">
+                                    <div class="bottom_patch">
+                                        <h2>Kayaking</h2>
+                                        <p>A sturdy canoe, a paddle and wide waters are all you need.</p>
+                                    </div>
+                                    <img src="assets/images/adventure_img_01.jpg" />
+                                </div>
+                            </div>
+                            <!--  -->
+
+                            <div class="slide">
+                                <div class="thumbnail_style">
+                                    <div class="bottom_patch">
+                                        <h2>Bungee Jumping</h2>
+                                        <p>Your ticket to an adrenaline rush.</p>
+                                    </div>
+                                    <img src="assets/images/adventure_img_02.jpg" />
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="slide">
+                                <div class="thumbnail_style">
+                                    <div class="bottom_patch">
+                                        <h2>Hot Air Ballooning</h2>
+                                        <p>Take to the skies in style.</p>
+                                    </div>
+                                    <img src="assets/images/adventure_img_03.jpg" />
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="slide">
+                                <div class="thumbnail_style">
+                                    <div class="bottom_patch">
+                                        <h2>Quad Biking</h2>
+                                        <p>Take your s(quad) biking!</p>
+                                    </div>
+                                    <img src="assets/images/adventure_img_04.jpg" />
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <!--  -->
+
+                            <div class="slide">
+                                <div class="thumbnail_style">
+                                    <div class="bottom_patch">
+                                        <h2>Shark Cage Diving</h2>
+                                        <p>A thrill like no other.</p>
+                                    </div>
+                                    <img src="assets/images/adventure_img_05.jpg" />
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="slide">
+                                <div class="thumbnail_style">
+                                    <div class="bottom_patch">
+                                        <h2>Kite Surfing</h2>
+                                        <p>Feel the wind, spray, and the bright sun.</p>
+                                    </div>
+                                    <img src="assets/images/adventure_img_06.jpg" />
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="slide">
+                                <div class="thumbnail_style">
+                                    <div class="bottom_patch">
+                                        <h2>Paragliding</h2>
+                                        <p>Glide through the sky with ease.</p>
+                                    </div>
+                                    <img src="assets/images/adventure_img_07.jpg" />
+                                </div>
+                            </div>
+
+                            <!--  -->
+
+                            <div class="slide">
+                                <div class="thumbnail_style">
+                                    <div class="bottom_patch">
+                                        <h2>Abseiling</h2>
+                                        <p>Descend gracefully from spectacular heights.</p>
+                                    </div>
+                                    <img src="assets/images/adventure_img_08.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="offers_promotions NoPaMa">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text">SIGN UP FOR SPECIAL OFFERS & PROMOTIONS</div>
+                        <div class="sign_up">
+                            <a href="#">
+                                <i class="fa fa-long-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <marquee id="MarqueeFooterId" class="footertext" onload="this.start();" onmouseover="this.stop();" onmouseout="this.start();" truespeed="" scrollamount="1" scrolldelay="20" direction="left" loop="repeat">
+                <span> Lorem ipsum dolor sit amet, consectetur</span>
+                <span> Lorem ipsum dolor sit amet, consectetur </span>
+                <span> Lorem ipsum dolor sit amet, consectetur</span>
+                <span> Lorem ipsum dolor sit amet, consectetur</span>
+                <span> Lorem ipsum dolor sit amet, consectetur</span>
+            </marquee>
+            <div class="clearfix"></div>
+        </section>
+        <!-- Footer Start -->
+        <footer class="footer-wrapper" id="footer">
+            <div class="footer-content overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-title">Popular destinations</div>
+                            <a href="#" class="footer-item"> Kruger National Park </a>
+                            <a href="#" class="footer-item"> Apartheid Museum </a>
+                            <a href="#" class="footer-item"> West Coast National Park </a>
+                            <a href="#" class="footer-item"> Coffee Bay </a>
+                            <a href="#" class="footer-item"> Augrabies Falls </a>
+                            <a href="#" class="footer-item"> Madikwe Game Reserve </a>
+                            <a href="#" class="footer-item"> Oribi Gorge </a>
+                            <a href="#" class="footer-item"> Bourke’s Luck Potholes </a>
+                            <a href="#" class="footer-item"> Golden Gate Highlands National Park </a>
+                            <a href="#" class="footer-item"> God’s Window </a>
+                        </div>
+                        <!--  -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-title">Things to do</div>
+                            <a href="#" class="footer-item"> Active Adventure </a>
+                            <a href="#" class="footer-item"> Wildlife Safari </a>
+                            <a href="#" class="footer-item"> Coastal Beach </a>
+                            <a href="#" class="footer-item"> Cultural Roots </a>
+                            <a href="#" class="footer-item"> Scenic Outdoors </a>
+                            <a href="#" class="footer-item"> City Lifestyle </a>
+                        </div>
+                        <!--  -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-title">Plan your trip</div>
+                            <a href="#" class="footer-item"> Itineraries </a>
+                            <a href="#" class="footer-item"> Visa & Immigration</a>
+                            <a href="#" class="footer-item"> COVID-19 Travel Updates </a>
+                            <a href="#" class="footer-item"> When to Visit</a>
+                            <a href="#" class="footer-item"> Getting Here: Flights to South Africa </a>
+                            <a href="#" class="footer-item"> Getting Around</a>
+                        </div>
+                        <!--  -->
+
+                        <div class="col-lg-3 col-md-6 mt-md-5">
+                            <a href="#" class="footer-item"> South Africa: Revealed </a>
+                            <a href="#" class="footer-item"> More & More </a>
+                            <a href="#" class="footer-item"> Travel Trade </a>
+                            <a href="#" class="footer-item"> Partners </a>
+                            <a href="#" class="footer-item"> Facts </a>
+                            <a href="#" class="footer-item"> Blog </a>
+                            <a href="#" class="footer-item"> Newsroom </a>
+                            <a href="#" class="footer-item"> Contact Us </a>
+                        </div>
+                        <!--  -->
+                        <div class="copy-right">
+                            <div class="footer_logo">
+                                <img src="assets/images/Logo.png" />
+                            </div>
+                            <div class="social-links">
+                                <div class="socila-icons">
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </div>
+                                <div class="socila-icons">
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </div>
+                                <div class="socila-icons">
+                                    <a href="#">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </div>
+                                <div class="socila-icons">
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            © 2022. South African Tourism. All Rights Reserved. <a href="#"> Disclaimer </a> &nbsp; <a href="#"> Privacy Policy </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+        <!-- Page Scroll bar -->
+        <div class="scrollbar">
+            <div class="scrollball">
+                <span></span>
+            </div>
+        </div>
+        <!-- Page Scroll bar -->
+        <!-- jquery file -->
+
+        <script src="assets/js/jquery.js"></script>
+
+        <!-- bootstrap js file -->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/menu.js"></script>
+        <script src="assets/js/fancybox.js"></script>
+        <script src="assets/js/slick.min.js"></script>
+        <script src="assets/js/css3-animate-it.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+        <!-- MAP POPUP START -->
+        <div style="display: none;" id="Bungee_Jumping" class="map_popup_style">
+            <div class="video_wrp">
+                <video width="100%" height="100%" controls id="myVideo">
+                    <source src="https://www.html5rocks.com/en/tutorials/video/basics/Chrome_ImF.mp4" type="video/mp4" />
+                    <source src="https://www.html5rocks.com/en/tutorials/video/basics/Chrome_ImF.webm" type="video/webm" />
+                    <source src="https://www.html5rocks.com/en/tutorials/video/basics/Chrome_ImF.ogv" type="video/ogg" />
+                </video>
+            </div>
+            <div class="content_wrp">
+                <div class="icon_wrp">
+                    <img src="assets/images/activity_icon_bungee_jumping.png" />
+                </div>
+                <h2>Eastern Cape</h2>
+                <h1>Bungee Jumping</h1>
+                <p>A guaranteed rush of adrenaline as you dive head-first into this adventure!</p>
+            </div>
+        </div>
+
+        <div class="itinerary_style">
+            <div class="itinerary">
+                <div class="imageBox imageBefore">
+                    <a href="#">
+                        <img src="assets/images/itinerary_img.png" title="Itinerary" />
+                    </a>
+                </div>
+                <div class="imageBox imageAfter">
+                    <a href="#">
+                        <img src="assets/images/itinerary_img_hover.png" title="Itinerary" />
+                        <span>Itineraries </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
