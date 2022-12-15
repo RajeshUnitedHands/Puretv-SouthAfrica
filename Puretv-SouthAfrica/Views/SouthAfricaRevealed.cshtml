@@ -1,15 +1,13 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Home>
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.SouthAfricaRevealed>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "main.cshtml";
-    var revealed = (ContentModels.SouthAfricaRevealed)Model.Root().Children().Where(x =>
-            x.IsDocumentType("southAfricaRevealed")).FirstOrDefault();
+    Layout = null;
 }
-
 
 <!DOCTYPE html>
 <html lang="en">
+    
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -90,13 +88,13 @@
             </div>
         </header>
 
-        <section class="banner_style" style="background-image:url(@revealed?.RevealedImage.Url())">
+        <section class="banner_style" style="background-image:url(@Model?.RevealedImage.Url())">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="banner_container">
                             <div class="container">
-                                <h1><span style="display: inline-block;">@revealed?.RevealedTitle </span>@revealed?.RevealedSubtitle</h1>
+                                <h1><span style="display: inline-block;">@Model?.RevealedTitle </span>@Model?.RevealedSubtitle</h1>
 
                                 <!--  -->
                             </div>
@@ -125,44 +123,44 @@
                 <div class="row">
                     <div class="col-12 NoPadMar">
                         <div class="caption_wrp">
-                            <h1>@revealed?.RainbowTitle</h1>
+                            <h1>@Model?.RainbowTitle</h1>
 
-                            <p>@revealed?.RainbowContent</p>
+                            <p>@Model?.RainbowContent</p>
                         </div>
 
                         <div class="revealed_carousel animatedParent">
                             <div class="slide animated fadeInUpShort">
-                                <div class="caption">@revealed?.FirstImageTitle</div>
+                                <div class="caption">@Model?.FirstImageTitle</div>
                                 <div class="image_style">
-                                    <img src="@revealed?.FirstImage.Url()" class="image" />
+                                    <img src="@Model?.FirstImage.Url()" class="image" />
                                 </div>
                             </div>
 
                             <div class="slide animated fadeInUpShort">
-                                <div class="caption">@revealed?.SecondImageTitle</div>
+                                <div class="caption">@Model?.SecondImageTitle</div>
                                 <div class="image_style">
-                                    <img src="@revealed?.SecondImage.Url()" class="image" />
+                                    <img src="@Model?.SecondImage.Url()" class="image" />
                                 </div>
                             </div>
 
                             <div class="slide animated fadeInUpShort">
-                                <div class="caption">@revealed?.ThirdImageTitle</div>
+                                <div class="caption">@Model?.ThirdImageTitle</div>
                                 <div class="image_style">
-                                    <img src="@revealed?.ThirdImage.Url()" class="image" />
+                                    <img src="@Model?.ThirdImage.Url()" class="image" />
                                 </div>
                             </div>
 
                             <div class="slide animated fadeInUpShort">
-                                <div class="caption">@revealed?.FourthImageTitle</div>
+                                <div class="caption">@Model?.FourthImageTitle</div>
                                 <div class="image_style">
-                                    <img src="@revealed?.FourthImage.Url()" class="image" />
+                                    <img src="@Model?.FourthImage.Url()" class="image" />
                                 </div>
                             </div>
 
                             <div class="slide animated fadeInUpShort">
-                                <div class="caption">@revealed?.FifthImageTitle</div>
+                                <div class="caption">@Model?.FifthImageTitle</div>
                                 <div class="image_style">
-                                    <img src="@revealed?.FifthImage.Url()" class="image" />
+                                    <img src="@Model?.FifthImage.Url()" class="image" />
                                 </div>
                             </div>
                         </div>
@@ -178,18 +176,18 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="sec_heading">
-                            <h1>@revealed?.SeasonTitle</h1>
+                            <h1>@Model?.SeasonTitle</h1>
                         </div>
 
-                        <p>@revealed?.SeasonContent</p>
+                        <p>@Model?.SeasonContent</p>
 
                         <div class="revealded_thumb animated fadeInUpShort">
                             <figure class="effect-lily">
-                                <img src="@revealed?.SpringSeason.Url()"/>
+                                <img src="@Model?.SpringSeason.Url()"/>
                                 <figcaption>
                                     <div>
-                                        <h2>@revealed?.SpringTitle</h2>
-                                        <p> @revealed?.SpringContent <br/></p>
+                                        <h2>@Model?.SpringTitle</h2>
+                                        <p> @Model?.SpringContent <br/></p>
                                     </div>
                                     <a href="#">View more</a>
                                 </figcaption>
@@ -200,11 +198,11 @@
 
                         <div class="revealded_thumb animated fadeInUpShort">
                             <figure class="effect-lily">
-                                <img src="@revealed?.SummerSeason.Url()" />
+                                <img src="@Model?.SummerSeason.Url()" />
                                 <figcaption>
                                     <div>
-                                        <h2>@revealed?.SummerTitle</h2>
-                                        <p> @revealed?.SummerContent <br /></p>
+                                        <h2>@Model?.SummerTitle</h2>
+                                        <p> @Model?.SummerContent <br /></p>
                                     </div>
                                     <a href="#">View more</a>
                                 </figcaption>
@@ -215,11 +213,11 @@
 
                         <div class="revealded_thumb animated fadeInUpShort">
                             <figure class="effect-lily">
-                                <img src="@revealed?.AutumnSeason.Url()" />
+                                <img src="@Model?.AutumnSeason.Url()" />
                                 <figcaption>
                                     <div>
-                                        <h2>@revealed?.AutumnTitle</h2>
-                                        <p> @revealed?.AutumnContent <br /></p>
+                                        <h2>@Model?.AutumnTitle</h2>
+                                        <p> @Model?.AutumnContent <br /></p>
                                     </div>
                                     <a href="#">View more</a>
                                 </figcaption>
@@ -230,11 +228,11 @@
 
                         <div class="revealded_thumb">
                             <figure class="effect-lily">
-                                <img src="@revealed?.WinterSeason.Url()" />
+                                <img src="@Model?.WinterSeason.Url()" />
                                 <figcaption>
                                     <div>
-                                        <h2>@revealed?.WinterTitle</h2>
-                                        <p> @revealed?.WinterContent <br/></p>
+                                        <h2>@Model?.WinterTitle</h2>
+                                        <p> @Model?.WinterContent <br/></p>
                                     </div>
                                     <a href="#">View more</a>
                                 </figcaption>
@@ -254,10 +252,10 @@
                     <div class="col-12 NoPadMar center_text">
                         <div class="left_content">
                             <div class="sec_heading">
-                                <h1>@revealed?.GeographyTitle</h1>
+                                <h1>@Model?.GeographyTitle</h1>
                             </div>
 
-                            <p> @revealed?.GeographyContent</p>
+                            <p> @Model?.GeographyContent</p>
                         </div>
 
                         <div class="map_wrp">
@@ -281,10 +279,10 @@
                     <div class="col-12 center_text">
                         <div class="left_content">
                             <div class="sec_heading">
-                                <h1>@revealed?.CurrencyTitle</h1>
+                                <h1>@Model?.CurrencyTitle</h1>
                             </div>
 
-                            <p>@revealed?.CurrencyDescription</p>
+                            <p>@Model?.CurrencyDescription</p>
                                 
                         </div>
 
