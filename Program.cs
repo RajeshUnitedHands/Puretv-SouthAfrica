@@ -1,4 +1,4 @@
-namespace SouthAfrica
+namespace NewCode
 {
     public class Program
     {

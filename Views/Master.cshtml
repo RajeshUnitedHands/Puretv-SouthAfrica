@@ -1,0 +1,206 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@inherits UmbracoViewPage
+@{
+	Layout = null;
+    var homepage = (ContentModels.Home) Model.Root();
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+        <!-- bootstrap css file -->
+        <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" />
+        <!-- all.min.css file -->
+        <link rel="stylesheet" href="~/assets/css/all.min.css" />
+        <!-- font-awesome css file -->
+
+        <!-- style.css file -->
+        <link rel="stylesheet" href="~/assets/css/mystyle.css" />
+        <link rel="stylesheet" href="~/assets/css/media_query.css" />
+        <link rel="stylesheet" href="~/assets/css/menu.css" />
+        <link rel="stylesheet" href="~/assets/css/fancybox.css" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link href="~/assets/css/slick.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="~/assets/css/animations.css" type="text/css" />
+
+        <link rel="stylesheet" href="~/assets/css/vertical-slide.css" type="text/css" />
+
+        <title>South Africa</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="main-header">
+                            <div class="menu_wrp">
+                                <input type="checkbox" class="menu-btn" id="menu-btn" />
+                                <label for="menu-btn" class="menu-icon">
+                                    <span class="menu-icon__line"></span>
+                                </label>
+
+                                <ul class="nav-links">
+                                @{
+                                var links = homepage.NavLinks;
+                                if (links.Any())
+                                {
+                                    @foreach (var link in links)
+                                    {
+                                        <li class="nav-link @(link.Name==Model.Name ? " active" :null)"><a href="@link.Url">
+                                                @link.Name </a>
+                                        </li>
+                                    }                                }
+                            }
+                                </ul>
+
+                                <div class="search_icon">
+                                    <a data-fancybox data-src="#trueModal" href="javascript:;"> <i class="fa fa-search" aria-hidden="true"></i> </a>
+                                </div>
+
+                                <div class="search_popup" style="display: none;" id="trueModal">
+                                    <form class="search-container">
+                                        <input type="text" id="search-bar" placeholder="Search..." />
+                                        <a href="#">
+                                            <div class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></div>
+                                        </a>
+                                    </form>
+                                </div>
+
+                                <!--  -->
+                            </div>
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="~/assets/images/Logo.png" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+		@RenderBody()
+        <footer class="footer-wrapper" id="footer">
+            <div class="footer-content overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-title">Popular destinations</div>
+                            <a href="#" class="footer-item"> Kruger National Park </a>
+                            <a href="#" class="footer-item"> Apartheid Museum </a>
+                            <a href="#" class="footer-item"> West Coast National Park </a>
+                            <a href="#" class="footer-item"> Coffee Bay </a>
+                            <a href="#" class="footer-item"> Augrabies Falls </a>
+                            <a href="#" class="footer-item"> Madikwe Game Reserve </a>
+                            <a href="#" class="footer-item"> Oribi Gorge </a>
+                            <a href="#" class="footer-item"> Bourke’s Luck Potholes </a>
+                            <a href="#" class="footer-item"> Golden Gate Highlands National Park </a>
+                            <a href="#" class="footer-item"> God’s Window </a>
+                        </div>
+                        <!--  -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-title">Things to do</div>
+                            <a href="#" class="footer-item"> Active Adventure </a>
+                            <a href="#" class="footer-item"> Wildlife Safari </a>
+                            <a href="#" class="footer-item"> Coastal Beach </a>
+                            <a href="#" class="footer-item"> Cultural Roots </a>
+                            <a href="#" class="footer-item"> Scenic Outdoors </a>
+                            <a href="#" class="footer-item"> City Lifestyle </a>
+                        </div>
+                        <!--  -->
+                        <div class="col-lg-3 col-md-6">
+                            <div class="footer-title">Plan your trip</div>
+                            <a href="#" class="footer-item"> Itineraries </a>
+                            <a href="#" class="footer-item"> Visa & Immigration</a>
+                            <a href="#" class="footer-item"> COVID-19 Travel Updates </a>
+                            <a href="#" class="footer-item"> When to Visit</a>
+                            <a href="#" class="footer-item"> Getting Here: Flights to South Africa </a>
+                            <a href="#" class="footer-item"> Getting Around</a>
+                        </div>
+                        <!--  -->
+
+                        <div class="col-lg-3 col-md-6 mt-md-5">
+                            <a href="#" class="footer-item"> South Africa: Revealed </a>
+                            <a href="#" class="footer-item"> More & More </a>
+                            <a href="#" class="footer-item"> Travel Trade </a>
+                            <a href="#" class="footer-item"> Partners </a>
+                            <a href="#" class="footer-item"> Facts </a>
+                            <a href="#" class="footer-item"> Blog </a>
+                            <a href="#" class="footer-item"> Newsroom </a>
+                            <a href="#" class="footer-item"> Contact Us </a>
+                        </div>
+                        <!--  -->
+                        <div class="copy-right">
+                            <div class="footer_logo">
+                                <img src="~/assets/images/Logo.png" />
+                            </div>
+                            <div class="social-links">
+                                <div class="socila-icons">
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </div>
+                                <div class="socila-icons">
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </div>
+                                <div class="socila-icons">
+                                    <a href="#">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </div>
+                                <div class="socila-icons">
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            © 2022. South African Tourism. All Rights Reserved. <a href="#"> Disclaimer </a> &nbsp; <a href="#"> Privacy Policy </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+		        <div class="scrollbar">
+            <div class="scrollball">
+                <span></span>
+            </div>
+        </div>
+        <!-- Page Scroll bar -->
+        <!-- jquery file -->
+
+        <script src="~/assets/js/jquery.js"></script>
+
+        <!-- bootstrap js file -->
+        <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="~/assets/js/menu.js"></script>
+        <script src="~/assets/js/fancybox.js"></script>
+        <script src="~/assets/js/slick.min.js"></script>
+        <script src="~/assets/js/css3-animate-it.js"></script>
+
+        <script src="~/assets/js/scripts.js"></script>
+
+        <div class="itinerary_style">
+            <div class="itinerary">
+                <div class="imageBox imageBefore">
+                    <a href="#">
+                        <img src="~/assets/images/itinerary_img.png" title="Itinerary" />
+                    </a>
+                </div>
+                <div class="imageBox imageAfter">
+                    <a href="#">
+                        <img src="~/assets/images/itinerary_img_hover.png" title="Itinerary" />
+                        <span>Itineraries </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
