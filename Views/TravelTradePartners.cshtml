@@ -1,0 +1,455 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.TravelTradePartners>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "Master.cshtml";
+    var model = Model.Root();
+    var deallist = model.Descendants<ContentModels.Deals>().Where(x => x.IsVisible());
+}
+<section class="banner_style" style="margin-bottom: 0px; background-image: url(@Model?.BackgroundImage.Url()">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="banner_container">
+                    <div class="container">
+                        <h1><span> @Model?.Title</span> @Model.SubTitle</h1>
+
+                        <!--  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--  -->
+
+<section class="deals_wrp">
+    <div class="container">
+        <div class="row animatedParent">
+            <div class="col-12 NoPadMar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="sec_heading white_text">
+                                <h1>Deals</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="deals_slide animated fadeInRightShort">
+                    @foreach (ContentModels.Deals item in deallist)
+
+
+
+                    {
+                        <div class="slide">
+                            <div class="thumbnail_style">
+                                <img src="@item.Image.Url()" />
+                            </div>
+
+                            <div class="content_wrp">
+                                <div class="text_wrp">
+                                    @item.Description
+                                </div>
+                                <div class="book_now_btn">
+                                    <a href="@item.Link.Url"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Thomas -->
+
+<section class="travel_trade_style animatedParent">
+    <div class="container-fluid">
+        <div class="row animatedParent">
+            <div class="col-12 NoPadMar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="sec_heading">
+                                <h1>Partner Itineraries</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="partners_wrp">
+                    <div class="container partner_logo"><img src="assets/images/partner_logo_thomas_cook.png" /></div>
+
+                    <div class="travel_trade animated fadeInRightShort">
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img01.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">Serene South Africa with Kruger</div>
+                                <div class="days_style">8 Days, 7 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img02.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South Africa Splendor</div>
+                                <div class="days_style">9 Days, 8 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img03.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur</div>
+                                <div class="days_style">10 Days, 9 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img04.jpg" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur – Diwali Special</div>
+                                <div class="days_style">11 Days, 10 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img05.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Add on Kenya</div>
+                                <div class="days_style">13 Days, 12 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img06.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Kenyan Dhamaka</div>
+                                <div class="days_style">15 Days, 14 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img07.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Kenyan Discovery</div>
+                                <div class="days_style">16 Days, 15 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SOTC Starts -->
+
+<section class="travel_trade_style animatedParent">
+    <div class="container-fluid">
+        <div class="row animatedParent">
+            <div class="col-12 NoPadMar">
+                <div class="partners_wrp partner_bg">
+                    <div class="container partner_logo"><img src="assets/images/partner_logo_SOTC.png" /></div>
+
+                    <div class="travel_trade animated fadeInRightShort">
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img08.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">Serene South Africa with Kruger</div>
+                                <div class="days_style">8 Days, 7 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Riya Travel Start  -->
+
+<section class="travel_trade_style animatedParent">
+    <div class="container-fluid">
+        <div class="row animatedParent">
+            <div class="col-12 NoPadMar">
+                <div class="partners_wrp">
+                    <div class="container partner_logo"><img src="assets/images/partner_logo_Riya.png" /></div>
+
+                    <div class="travel_trade animated fadeInRightShort">
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img01.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">Serene South Africa with Kruger</div>
+                                <div class="days_style">8 Days, 7 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img02.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South Africa Splendor</div>
+                                <div class="days_style">9 Days, 8 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img03.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur</div>
+                                <div class="days_style">10 Days, 9 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img04.jpg" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur – Diwali Special</div>
+                                <div class="days_style">11 Days, 10 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img05.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Add on Kenya</div>
+                                <div class="days_style">13 Days, 12 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img06.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Kenyan Dhamaka</div>
+                                <div class="days_style">15 Days, 14 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img07.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Kenyan Discovery</div>
+                                <div class="days_style">16 Days, 15 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Akbar Travel Starts -->
+
+<section class="travel_trade_style animatedParent">
+    <div class="container-fluid">
+        <div class="row animatedParent">
+            <div class="col-12 NoPadMar">
+                <div class="partners_wrp partner_bg">
+                    <div class="container partner_logo"><img src="assets/images/partner_logo_AkberTravles.png" /></div>
+
+                    <div class="travel_trade animated fadeInRightShort">
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img01.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">Serene South Africa with Kruger</div>
+                                <div class="days_style">8 Days, 7 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img02.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South Africa Splendor</div>
+                                <div class="days_style">9 Days, 8 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img03.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur</div>
+                                <div class="days_style">10 Days, 9 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img04.jpg" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur – Diwali Special</div>
+                                <div class="days_style">11 Days, 10 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img05.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Add on Kenya</div>
+                                <div class="days_style">13 Days, 12 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img06.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Kenyan Dhamaka</div>
+                                <div class="days_style">15 Days, 14 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--  -->
+
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img07.png" /></div>
+                            <div class="slide_content">
+                                <div class="place_name">South African Grandeur with Kenyan Discovery</div>
+                                <div class="days_style">16 Days, 15 Nights</div>
+                                <div class="book_now_btn">
+                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--  -->
+
+<section class="animatedParent">
+    <div class="container">
+        <div class="row animatedParent">
+            <div class="col-12 NoPadMar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="sec_heading">
+                                <h1>Airline Partners</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="airline_partners animated fadeInRightShort">
+                    @foreach (var item in @Model.AirLinePartners.ToList())
+                    {
+                        <div class="slide">
+                            <div class="thumbnail_style"><img src="@item.Logo.Url()"/></div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

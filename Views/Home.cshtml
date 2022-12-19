@@ -3,13 +3,11 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
     Layout = "Master.cshtml";
+    var model = Model.Root();
+    var dynamicList = model.Descendants<ContentModels.Dynamic>().Where(x => x.IsVisible());
+    var verticalList = model.Descendants<ContentModels.Vertical>().Where(x => x.IsVisible());
+    var bucketList = model.Descendants<ContentModels.BucketList>().Where(x => x.IsVisible());
 
-    var slides = (ContentModels.DynamicList)Model.Root().Children().Where(x =>
-    x.IsDocumentType("dynamicList")).FirstOrDefault();
-        var verticalList = (ContentModels.VerticalList)Model.Root().Children().Where(x =>
-    x.IsDocumentType("verticalList")).FirstOrDefault();  
-      var bucketList = (ContentModels.BucketListHotspots)Model.Root().Children().Where(x =>
-    x.IsDocumentType("bucketListHotspots")).FirstOrDefault();
 }
 <section class="banner_style" style="background-image: url(@Model.HomeBanner.Url());"style="margin-bottom: 0px;">
     <div class="container">
@@ -47,7 +45,7 @@
             </div>
             <div class="col-md-7 offset-md-1 col-12 right_slider_wrp animated fadeInRightShort">
                 <div class="Home_offer_slider">
-                    @foreach (ContentModels.Dynamic item in slides.Children())
+                    @foreach (ContentModels.Dynamic item in dynamicList)
                     {
                         <div class="slide">
                             <div class="image_style">
@@ -70,13 +68,11 @@
 
         <section>
             <div class="container-fuild">
-                
-
                 <div class="row">
                     <div class="col-12">
                         <div class="Slide_wrp">
                             <div class="slides">
-								@foreach (ContentModels.Vertical item in verticalList.Children())
+								@foreach (ContentModels.Vertical item in verticalList)
 								{
 								    <div class="slide" style="background-image: url(@item.BackroundImage.Url());">
                                     <div class="caption_style">
@@ -111,7 +107,7 @@
                 </div>
 
                 <div class="Bucket_list animated fadeInRightShort">
-							@foreach (ContentModels.BucketList item in bucketList.Children())
+							@foreach (ContentModels.BucketList item in bucketList)
 							{
                             <div class="slide">
                                 <div class="thumbnail_style">
@@ -167,16 +163,16 @@
                     <div class="col-md-12">
                         <div class="image_effect">
                             <figure class="effect-ruby">
-                                <img src="assets/images/touchdown_img_01.jpg" />
+                                <img src="@Model?.ImageTd1.Url()" />
                                 <figcaption>
-                                    <h2>VISA & IMMIGRATION <span> Hassle-free processes for the perfect vacation.
+                                    <h2>@Model?.TitleTd1<span> @Model?.DescriptionTd1
                                         </span></h2>
 
                                         
 
                                     <div class="hidden">
                                         <div class="button">
-                                            <a href="https://www.google.co.in/">
+                                            <a href="@Model?.LinkTd1.Url">
                                                 <i class="fa fa-long-arrow-right"></i>
                                             </a>
                                         </div>
@@ -189,12 +185,12 @@
                     <div class="col-md-12">
                         <div class="image_effect">
                             <figure class="effect-ruby">
-                                <img src="assets/images/touchdown_img_02.jpg" />
+                                <img src="@Model?.ImageTd2.Url()" />
                                 <figcaption>
-                                    <h2>INTERNATIONAL TRAVEL UPDATES <span> Everything you need to know. </span></h2>
+                                    <h2>@Model?.TitleTd2<span> @Model?.DescriptionTd2</span></h2>
                                     <div class="hidden">
                                         <div class="button">
-                                            <a href="#"> <i class="fa fa-long-arrow-right"></i> </a>
+                                            <a href="@Model?.LinkTd2.Url"> <i class="fa fa-long-arrow-right"></i> </a>
                                         </div>
                                     </div>
                                 </figcaption>
@@ -209,12 +205,12 @@
                     <div class="col-12">
                         <div class="image_effect">
                             <figure class="effect-ruby">
-                                <img src="assets/images/touchdown_img_05.jpg" />
+                                <img src="@Model?.ImageTd3.Url()" />
                                 <figcaption>
-                                    <h2>INTERNATIONAL TRAVEL UPDATES <span> Everything you need to know. </span></h2>
+                                    <h2>@Model?.TitleTd3<span> @Model?.DescriptionTd3 </span></h2>
                                     <div class="hidden">
                                         <div class="button">
-                                            <a href="#"> <i class="fa fa-long-arrow-right"></i> </a>
+                                            <a href="@Model?.LinkTd3.Url"> <i class="fa fa-long-arrow-right"></i> </a>
                                         </div>
                                     </div>
                                 </figcaption>
@@ -227,18 +223,17 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="image_effect">
                                     <figure class="effect-ruby">
-                                        <img src="assets/images/touchdown_img_03.jpg" />
+                                        <img src="@Model?.ImageTd4.Url()" />
                                         <figcaption>
                                             <h2>
-                                                GETTING HERE
+                                                @Model?.TitleTd4
                                                 <span>
-                                                    Flights to South Africa: <br />
-                                                    Fly into the Rainbow Nation on great deals.
+                                                    @Model?.DescriptionTd4
                                                 </span>
                                             </h2>
                                             <div class="hidden">
                                                 <div class="button">
-                                                    <a href="#"> <i class="fa fa-long-arrow-right"></i> </a>
+                                                    <a href="@Model?.LinkTd4.Url"> <i class="fa fa-long-arrow-right"></i> </a>
                                                 </div>
                                             </div>
                                         </figcaption>
@@ -250,13 +245,13 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="image_effect">
                                     <figure class="effect-ruby">
-                                        <img src="assets/images/touchdown_img_04.jpg" />
+                                        <img src="@Model?.ImageTd5.Url()" />
                                         <figcaption>
-                                            <h2>GETTING AROUND <span> Discover South Africa by road, train or air.
+                                            <h2>@Model?.TitleTd5<span> @Model?.DescriptionTd5
                                                 </span></h2>
                                             <div class="hidden">
                                                 <div class="button">
-                                                    <a href="#"> <i class="fa fa-long-arrow-right"></i> </a>
+                                                    <a href="@Model?.LinkTd5.Url"> <i class="fa fa-long-arrow-right"></i> </a>
                                                 </div>
                                             </div>
                                         </figcaption>
@@ -509,26 +504,3 @@
     </div>
 </section>
 <!-- Map Start -->
-<section class="offers_promotions NoPaMa">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="text">SIGN UP FOR SPECIAL OFFERS & PROMOTIONS</div>
-                <div class="sign_up">
-                    <a href="#">
-                        <i class="fa fa-long-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <marquee id="MarqueeFooterId" class="footertext" onload="this.start();" onmouseover="this.stop();"
-        onmouseout="this.start();" truespeed="" scrollamount="1" scrolldelay="20" direction="left" loop="repeat">
-        <span> Lorem ipsum dolor sit amet, consectetur</span>
-        <span> Lorem ipsum dolor sit amet, consectetur </span>
-        <span> Lorem ipsum dolor sit amet, consectetur</span>
-        <span> Lorem ipsum dolor sit amet, consectetur</span>
-        <span> Lorem ipsum dolor sit amet, consectetur</span>
-    </marquee>
-    <div class="clearfix"></div>
-</section>

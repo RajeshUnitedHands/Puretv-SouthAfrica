@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Home</summary>
 	[PublishedModel("home")]
-	public partial class Home : PublishedContentModel, IBucketListHotspots
+	public partial class Home : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -82,6 +82,30 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string DescriptionTd2 => this.Value<string>(_publishedValueFallback, "descriptionTD2");
 
 		///<summary>
+		/// Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("descriptionTD3")]
+		public virtual string DescriptionTd3 => this.Value<string>(_publishedValueFallback, "descriptionTD3");
+
+		///<summary>
+		/// Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("descriptionTD4")]
+		public virtual string DescriptionTd4 => this.Value<string>(_publishedValueFallback, "descriptionTD4");
+
+		///<summary>
+		/// Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("descriptionTD5")]
+		public virtual string DescriptionTd5 => this.Value<string>(_publishedValueFallback, "descriptionTD5");
+
+		///<summary>
 		/// Banner
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
@@ -104,6 +128,30 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("imageTD2")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ImageTd2 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "imageTD2");
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("imageTD3")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ImageTd3 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "imageTD3");
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("imageTD4")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ImageTd4 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "imageTD4");
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("imageTD5")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ImageTd5 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "imageTD5");
 
 		///<summary>
 		/// Link
@@ -130,6 +178,30 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.Link LinkTd2 => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "linkTD2");
 
 		///<summary>
+		/// Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("linkTD3")]
+		public virtual global::Umbraco.Cms.Core.Models.Link LinkTd3 => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "linkTD3");
+
+		///<summary>
+		/// Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("linkTD4")]
+		public virtual global::Umbraco.Cms.Core.Models.Link LinkTd4 => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "linkTD4");
+
+		///<summary>
+		/// Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("linkTD5")]
+		public virtual global::Umbraco.Cms.Core.Models.Link LinkTd5 => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "linkTD5");
+
+		///<summary>
 		/// Logo
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
@@ -152,6 +224,30 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("navLinks")]
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> NavLinks => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link>>(_publishedValueFallback, "navLinks");
+
+		///<summary>
+		/// Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("offerLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link OfferLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "offerLink");
+
+		///<summary>
+		/// Offers
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("offers")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> Offers => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "offers");
+
+		///<summary>
+		/// Promotions Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("promotionsTitle")]
+		public virtual string PromotionsTitle => this.Value<string>(_publishedValueFallback, "promotionsTitle");
 
 		///<summary>
 		/// SubTitle
@@ -200,6 +296,30 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("titleTD2")]
 		public virtual string TitleTd2 => this.Value<string>(_publishedValueFallback, "titleTD2");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("titleTD3")]
+		public virtual string TitleTd3 => this.Value<string>(_publishedValueFallback, "titleTD3");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("titleTD4")]
+		public virtual string TitleTd4 => this.Value<string>(_publishedValueFallback, "titleTD4");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("titleTD5")]
+		public virtual string TitleTd5 => this.Value<string>(_publishedValueFallback, "titleTD5");
 
 		///<summary>
 		/// Welcome Notes

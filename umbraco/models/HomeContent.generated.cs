@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Home Content</summary>
+	/// <summary>Home  Slides</summary>
 	[PublishedModel("homeContent")]
 	public partial class HomeContent : PublishedContentModel
 	{
