@@ -106,6 +106,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string GeographyTitle => this.Value<string>(_publishedValueFallback, "geographyTitle");
 
 		///<summary>
+		/// Rainbow Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("rainbowDescription")]
+		public virtual string RainbowDescription => this.Value<string>(_publishedValueFallback, "rainbowDescription");
+
+		///<summary>
+		/// Rainbow Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("rainbowTitle")]
+		public virtual string RainbowTitle => this.Value<string>(_publishedValueFallback, "rainbowTitle");
+
+		///<summary>
 		/// Revealed Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]

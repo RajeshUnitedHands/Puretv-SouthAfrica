@@ -3,14 +3,17 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "Master.cshtml";
+    var model = Model.Root();
+    var rainbownation = model.Descendants<ContentModels.Rainbow>().Where(x => x.IsVisible());
+	var tasteOfAdventure = model.Descendants<ContentModels.Adventure>().Where(x => x.IsVisible());
 }
-<section class="banner_style revealed_bg" style="margin-bottom: 0px;">
+<section class="banner_style revealed_bg" style="background-image:url(@Model?.RevealedImage.Url())">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<div class="banner_container">
 					<div class="container">
-						<h1><span style="display: inline-block;"> South Africa: </span> Uncovered</h1>
+						<h1><span style="display: inline-block;"> @Model?.RevealedTitle </span> @Model?.RevealedSubtitle</h1>
 
 						<!--  -->
 					</div>
@@ -39,52 +42,20 @@
 		<div class="row">
 			<div class="col-12 NoPadMar">
 				<div class="caption_wrp">
-					<h1>The Rainbow Nation</h1>
-
-					<p>
-						Variety is the spice of life and Indians sure do love their spices! Like spices make a dish, so
-						do adventures make a holiday worth remembering. And South Africa is a phenomenal destination
-						with a variety of
-						adventures! The best wildlife on the planet, sprawling sandy beaches, glittering oceans, miles
-						of mountains to scale, vineyards to tour and so much more.
-					</p>
+					<h1>@Model?.RainbowTitle</h1>
+					<p>@Model?.RainbowDescription</p>
 				</div>
 
 				<div class="revealed_carousel animatedParent">
-					<div class="slide animated fadeInUpShort">
-						<div class="caption">The best wildlife on the planet</div>
+					@foreach (ContentModels.Rainbow item in rainbownation)
+					{
+						<div class="slide animated fadeInUpShort">
+						<div class="caption">@item.RainbowImageContent</div>
 						<div class="image_style">
-							<img src="~/assets/images/The_Rainbow Nation_thumb_01.jpg" class="image" />
+							<img src="@item.RainbowImage.Url()" class="image" />
 						</div>
 					</div>
-
-					<div class="slide animated fadeInUpShort">
-						<div class="caption">sprawling sandy beaches</div>
-						<div class="image_style">
-							<img src="~/assets/images/The_Rainbow Nation_thumb_02.jpg" class="image" />
-						</div>
-					</div>
-
-					<div class="slide animated fadeInUpShort">
-						<div class="caption">miles of mountains to scale</div>
-						<div class="image_style">
-							<img src="~/assets/images/The_Rainbow Nation_thumb_03.jpg" class="image" />
-						</div>
-					</div>
-
-					<div class="slide animated fadeInUpShort">
-						<div class="caption">glittering oceans</div>
-						<div class="image_style">
-							<img src="~/assets/images/The_Rainbow Nation_thumb_04.jpg" class="image" />
-						</div>
-					</div>
-
-					<div class="slide animated fadeInUpShort">
-						<div class="caption">vineyards to tour and so much more</div>
-						<div class="image_style">
-							<img src="~/assets/images/The_Rainbow Nation_thumb_05.jpg" class="image" />
-						</div>
-					</div>
+					}
 				</div>
 			</div>
 		</div>
@@ -98,24 +69,18 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="sec_heading">
-					<h1>Seasons in South Africa</h1>
+					<h1>@Model?.SeasonTitle</h1>
 				</div>
 
-				<p>The seasons in the southern hemisphere have been turned on their head! Indian travelers to the
-					country must get ready to swap summer for winter and the monsoons for spring.</p>
+				<p>@Model?.SeasonContent</p>
 
 				<div class="revealded_thumb animated fadeInUpShort">
 					<figure class="effect-lily">
-						<img src="~/assets/images/Rainbow_Nation_Spring.jpg" />
+						<img src="@Model?.SpringImage.Url()" />
 						<figcaption>
 							<div>
-								<h2>Spring</h2>
-								<p>
-									The best months to experience springtime weather are September, October and
-									November. <br />
-									(Add ‘seeing the jacarandas in full bloom’ to your bucket list right now! You can
-									thank us later.)
-								</p>
+								<h2>@Model?.SpringTitle</h2>
+								<p>@Model?.SpringContent</p>					
 							</div>
 							<a href="#">View more</a>
 						</figcaption>
@@ -126,16 +91,11 @@
 
 				<div class="revealded_thumb animated fadeInUpShort">
 					<figure class="effect-lily">
-						<img src="~/assets/images/Rainbow_Nation_Summer.jpg" />
+						<img src="@Model?.SummerImage.Url()" />
 						<figcaption>
 							<div>
-								<h2>Summer</h2>
-								<p>
-									Christmas and New Year are sunny affairs, as summer rolls in with December. <br />
-									(Sharpen your knives for a delicious Christmas braai aka South African barbecue!)
-									<br />
-									Summer is the ideal time to indulge in water sports on the coasts.
-								</p>
+								<h2>@Model?.SummerTitle</h2>
+								<p>@Model?.SummerContent</p>
 							</div>
 							<a href="#">View more</a>
 						</figcaption>
@@ -146,17 +106,11 @@
 
 				<div class="revealded_thumb animated fadeInUpShort">
 					<figure class="effect-lily">
-						<img src="~/assets/images/Rainbow_Nation_Autumn.jpg" />
+						<img src="@Model?.AutumnImage.Url()" />
 						<figcaption>
 							<div>
-								<h2>Autumn</h2>
-								<p>
-									March bids goodbye to the summer heat and April welcomes the cool temperatures of
-									autumn. <br />
-									This is the perfect time to set off on hikes and do a spot of rock climbing! <br />
-									May is typically characterized by heavy showers that further plummet temperatures
-									until June.
-								</p>
+								<h2>@Model?.AutumnTitle</h2>
+								<p>@Model?.AutumnContent</p>
 							</div>
 							<a href="#">View more</a>
 						</figcaption>
@@ -167,16 +121,11 @@
 
 				<div class="revealded_thumb">
 					<figure class="effect-lily">
-						<img src="~/assets/images/Rainbow_Nation_Winter.jpg" />
+						<img src="@Model?.WinterImage.Url()" />
 						<figcaption>
 							<div>
-								<h2>Winter</h2>
-								<p>
-									Winter in South Africa is moderate and the best time to hop on a safari! <br />
-									Between July to August, wildlife gathers around watering holes, making them easy to
-									spot. <br />
-									Also, don’t miss out on the Sardine Run in Durban during the winter! <br />
-								</p>
+								<h2>@Model?.WinterTitle</h2>
+								<p>@Model?.WinterContent</p>
 							</div>
 							<a href="#">View more</a>
 						</figcaption>
@@ -196,20 +145,11 @@
 			<div class="col-12 NoPadMar center_text">
 				<div class="left_content">
 					<div class="sec_heading">
-						<h1>Geography</h1>
+						<h1>@Model?.GeographyTitle</h1>
 					</div>
 
-					<p>
-						Occupying the southernmost tip of the African continent, South Africa stretches from a southern
-						desert border with Namibia to a northern border with Mozambique. South Africa is so diverse -
-						it’s got eight
-						bio-geographical regions within the same country. There are bushvelds, lush grasslands,
-						flourishing forests, magnificent mountains, swathes of unspoiled beaches and wetlands across the
-						coasts.
-					</p>
+					<p>@Model?.GeographyContent</p>
 
-					<p>In South Africa, you can discover every terrain possible! Surf waves or sand dunes, it’s up to
-						you.</p>
 				</div>
 
 				<div class="map_wrp">
@@ -230,22 +170,9 @@
 			<div class="col-12 center_text">
 				<div class="left_content">
 					<div class="sec_heading">
-						<h1>Currency</h1>
+						<h1>@Model?.CurrencyTitle</h1>
 					</div>
-
-					<p>
-						The official currency of South Africa is the Rand and is represented as ZAR. One Rand is divided
-						into 100 cents. At present, there are coins of 1, 2 and 5 Rand and banknotes of 10, 20, 50, 100,
-						200 and 1000
-						Rand in circulation. You’ll also find coins of 1, 2, 5, 10, 20 and 50 cents in circulation.
-					</p>
-
-					<p>Wondering where the name comes from? It comes from the name of a significant ridge, called the
-						Witwatersrand. Located in Johannesburg, Witwatersrand is where several gold deposits were found.
-					</p>
-
-					<p>Fun fact: The South African rand is accepted currency in the countries of Namibia, Lesotho and
-						Eswatini.</p>
+					<p>@Model?.CurrencyDescription</p> 
 				</div>
 
 				<div class="Currency_right">
@@ -287,17 +214,20 @@
 				</div>
 
 				<div class="Adventure_slider animated fadeInRightShort">
+					@foreach (ContentModels.Adventure item in tasteOfAdventure)
+					{
 					<div class="slide">
 						<div class="thumbnail_style">
 							<div class="bottom_patch">
-								<h2>Kayaking</h2>
-								<p>A sturdy canoe, a paddle and wide waters are all you need.</p>
+								<h2>@item.AdventureTitle</h2>
+								<p>@item.AdventureDescription</p>
 							</div>
-							<img src="~/assets/images/adventure_img_01.jpg" />
+							<img src="@item.AdventureImage.Url()"/>
 						</div>
 					</div>
+					}
 					<!--  -->
-
+@* 
 					<div class="slide">
 						<div class="thumbnail_style">
 							<div class="bottom_patch">
@@ -380,7 +310,7 @@
 							</div>
 							<img src="~/assets/images/adventure_img_08.jpg" />
 						</div>
-					</div>
+					</div> *@
 				</div>
 			</div>
 		</div>
