@@ -1,11 +1,21 @@
+using Serilog;
+
 namespace NewCode
 {
     public class Program
     {
         public static void Main(string[] args)
-            => CreateHostBuilder(args)
+        {
+            CreateHostBuilder(args)
                 .Build()
                 .Run();
+                
+            var logger = new LoggerConfiguration().Enrich
+            .FromLogContext()
+            .WriteTo.Console()
+            .CreateLogger();
+        }
+
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
