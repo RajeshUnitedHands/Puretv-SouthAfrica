@@ -48,5 +48,173 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// Autumn Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("autumnContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString AutumnContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "autumnContent");
+
+		///<summary>
+		/// Autumn Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("autumnImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops AutumnImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "autumnImage");
+
+		///<summary>
+		/// Autumn Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("autumnTitle")]
+		public virtual string AutumnTitle => this.Value<string>(_publishedValueFallback, "autumnTitle");
+
+		///<summary>
+		/// Currency Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("currencyDescription")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CurrencyDescription => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "currencyDescription");
+
+		///<summary>
+		/// Currency Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("currencyTitle")]
+		public virtual string CurrencyTitle => this.Value<string>(_publishedValueFallback, "currencyTitle");
+
+		///<summary>
+		/// Geography Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("geographyContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GeographyContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "geographyContent");
+
+		///<summary>
+		/// Geography Title and Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("geographyTitle")]
+		public virtual string GeographyTitle => this.Value<string>(_publishedValueFallback, "geographyTitle");
+
+		///<summary>
+		/// Revealed Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("revealedImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops RevealedImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "revealedImage");
+
+		///<summary>
+		/// Revealed Subtitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("revealedSubtitle")]
+		public virtual string RevealedSubtitle => this.Value<string>(_publishedValueFallback, "revealedSubtitle");
+
+		///<summary>
+		/// Revealed Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("revealedTitle")]
+		public virtual string RevealedTitle => this.Value<string>(_publishedValueFallback, "revealedTitle");
+
+		///<summary>
+		/// Season Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("seasonContent")]
+		public virtual string SeasonContent => this.Value<string>(_publishedValueFallback, "seasonContent");
+
+		///<summary>
+		/// Season Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("seasonTitle")]
+		public virtual string SeasonTitle => this.Value<string>(_publishedValueFallback, "seasonTitle");
+
+		///<summary>
+		/// Spring Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("springContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString SpringContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "springContent");
+
+		///<summary>
+		/// Spring Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("springImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops SpringImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "springImage");
+
+		///<summary>
+		/// Spring Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("springTitle")]
+		public virtual string SpringTitle => this.Value<string>(_publishedValueFallback, "springTitle");
+
+		///<summary>
+		/// Summer Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("summerContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString SummerContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "summerContent");
+
+		///<summary>
+		/// Summer Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("summerImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops SummerImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "summerImage");
+
+		///<summary>
+		/// Summer Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("summerTitle")]
+		public virtual string SummerTitle => this.Value<string>(_publishedValueFallback, "summerTitle");
+
+		///<summary>
+		/// Winter Content
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("winterContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString WinterContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "winterContent");
+
+		///<summary>
+		/// Winter Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("winterImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops WinterImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "winterImage");
+
+		///<summary>
+		/// Winter Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("winterTitle")]
+		public virtual string WinterTitle => this.Value<string>(_publishedValueFallback, "winterTitle");
 	}
 }

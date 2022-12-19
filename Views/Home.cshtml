@@ -11,18 +11,17 @@
       var bucketList = (ContentModels.BucketListHotspots)Model.Root().Children().Where(x =>
     x.IsDocumentType("bucketListHotspots")).FirstOrDefault();
 }
-<section class="banner_style home_banner" style="margin-bottom: 0px;">
+<section class="banner_style" style="background-image: url(@Model.HomeBanner.Url());"style="margin-bottom: 0px;">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="banner_container">
                     <div class="container">
-                        <h1><span> Welcome to the world’s </span> Leading Adventure Destination</h1>
-                        <div class="highlight">Home to 3000 adventures & more!</div>
-                        <p>Revel in the majesty of nature, take a walk on the wild side, and do things that you’ve never
-                            done before. In South Africa, your next great adventure is always waiting to happen!</p>
+                        <h1><span> @Model.WelcomeNotes </span> @Model.Title</h1>
+                        <div class="highlight">@Model.SubTitle</div>
+                        <p>@Model.Description</p>
                         <a data-fancybox data-small-btn="true" class="btnFillup liquidbg"
-                            href="https://www.youtube.com/watch?v=rahRaVtEQaM">
+                            href="@Model.Link.Url">
                             Watch Video
                             <div class="icon"></div>
                         </a>
@@ -39,16 +38,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>South Africa <span> has a lot more to offer! </span></h1>
+                <h1>@Model.TitleSA <span> @Model.SubTitleSA </span></h1>
             </div>
         </div>
         <div class="row animatedParent">
             <div class="col-md-4 col-12 left_content_wrp animated fadeInUpShort">
-                <h4>We are many worlds in one.</h4>
-                <p>Where lush green forests coexist with sandy deserts. Where you can go diving with sharks, or stroll
-                    along the beach.</p>
-                <p>Known as ‘The Rainbow Nation’, South Africa is where you get to explore who you are and discover who
-                    you want to be.</p>
+                @Model.DescriptionSA
             </div>
             <div class="col-md-7 offset-md-1 col-12 right_slider_wrp animated fadeInRightShort">
                 <div class="Home_offer_slider">
@@ -176,6 +171,8 @@
                                 <figcaption>
                                     <h2>VISA & IMMIGRATION <span> Hassle-free processes for the perfect vacation.
                                         </span></h2>
+
+                                        
 
                                     <div class="hidden">
                                         <div class="button">
