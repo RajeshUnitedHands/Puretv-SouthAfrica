@@ -11,62 +11,43 @@
                         <div class="banner_container">
                             <div class="container">
                                 <div class="contact_banner_wrp animatedParent">
-                                    <div class="contact_banner animated fadeInLeftShort"><img src="~/assets/images/contact_banner.jpg" /></div>
+                                    <div class="contact_banner animated fadeInLeftShort"><img src="@Model?.ContactImage.Url()" /></div>
                                     <div class="contact_right_form">
-                                        <h4><span> We’d love to </span> hear <b>from you! </b></h4>
+                                        <h4><span> @Model?.ContactTitle<b>@Model?.ContactSubtitle</b></h4>
 
                                         <div class="row input-container line_input">
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="styled-input">
                                                     <input type="text" required />
-                                                    <label> Full Name<span>*</span> </label>
+                                                    <label> @Model?.FullName<span>*</span> </label>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="styled-input" style="float: right;">
                                                     <input type="text" required />
-                                                    <label> Last Name<span>*</span> </label>
+                                                    <label> @Model?.LastName<span>*</span> </label>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="styled-input">
                                                     <input type="text" required />
-                                                    <label> Phone Number<span>*</span> </label>
+                                                    <label>@Model?.PhoneNumber<span>*</span> </label>
                                                 </div>
                                             </div>
 
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="styled-input">
                                                     <input type="text" required />
-                                                    <label> Email<span>*</span> </label>
+                                                    <label> @Model?.Email<span>*</span> </label>
                                                 </div>
                                             </div>
-
-                                            <!-- <div class="col-md-6 col-sm-12">
-      <div class="styled-input" style="float:right;">
- 
-        <select class="">
-          <option value="" selected="" disabled="">City  </option>
-          <option> Mumbai </option> 
-          <option> Pune  </option>
-        </select>
-
-      </div>
-    </div> -->
-
-                                            <!-- <div class="col-xs-12">
-      <div class="styled-input wide">
-        <input type="text" required />
-        <label>Name</label> 
-      </div>
-    </div> -->
 
                                             <div class="col-xs-12">
                                                 <div class="styled-input wide">
                                                     <textarea required></textarea>
-                                                    <label>Your Question <span>*</span> </label>
+                                                    <label>@Model?.YourQuestion <span>*</span> </label>
                                                     <div class="send_icon_style"></div>
                                                 </div>
                                             </div>
