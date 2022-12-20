@@ -185,7 +185,7 @@
                     <div class="col-md-12">
                         <div class="image_effect">
                             <figure class="effect-ruby">
-                                <img src="@Model?.ImageTd2.Url()" />
+                                <img src="@Model?.ImageTd2?.Url()" />
                                 <figcaption>
                                     <h2>@Model?.TitleTd2<span> @Model?.DescriptionTd2</span></h2>
                                     <div class="hidden">
@@ -223,7 +223,7 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="image_effect">
                                     <figure class="effect-ruby">
-                                        <img src="@Model?.ImageTd4.Url()" />
+                                        <img src="@Model?.ImageTd4?.Url()" />
                                         <figcaption>
                                             <h2>
                                                 @Model?.TitleTd4
@@ -245,7 +245,7 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="image_effect">
                                     <figure class="effect-ruby">
-                                        <img src="@Model?.ImageTd5.Url()" />
+                                        <img src="@Model?.ImageTd5?.Url()" />
                                         <figcaption>
                                             <h2>@Model?.TitleTd5<span> @Model?.DescriptionTd5
                                                 </span></h2>
@@ -273,11 +273,11 @@
             <h1>Discover South Africa</h1>
             <div class="flex-break">
                 <select class="form">
-                    <option value="Active-Adventure"> Active Adventure </option>
-                    <option value="Wildlife-Safari"> Wildlife Safari </option>
-                    <option value="cultural-Roots"> Cultural Roots </option>
-                    <option value="City-Lifestyle"> City Lifestyle </option>
-                    <option value="Coastal-Life"> Coastal Life </option>
+                    @foreach (var item in @Model.DropDown)
+                    {
+                        var value = @item.City.Replace(" ", "-");
+                        <option value="@value"> @item.City </option>
+                    }
                 </select>
                 <!-- Active-Adventure Start -->
                 <div class="box Active-Adventure">
