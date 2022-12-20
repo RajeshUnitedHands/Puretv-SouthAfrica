@@ -4,6 +4,7 @@
 @{
 	Layout = null;
     var homepage = (ContentModels.Home) Model.Root();
+    var bucketList = homepage.Descendants<ContentModels.HomeContent>().Where(x => x.IsVisible());
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -112,49 +113,32 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
-                            <div class="footer-title">Popular destinations</div>
-                            <a href="#" class="footer-item"> Kruger National Park </a>
-                            <a href="#" class="footer-item"> Apartheid Museum </a>
-                            <a href="#" class="footer-item"> West Coast National Park </a>
-                            <a href="#" class="footer-item"> Coffee Bay </a>
-                            <a href="#" class="footer-item"> Augrabies Falls </a>
-                            <a href="#" class="footer-item"> Madikwe Game Reserve </a>
-                            <a href="#" class="footer-item"> Oribi Gorge </a>
-                            <a href="#" class="footer-item"> Bourke’s Luck Potholes </a>
-                            <a href="#" class="footer-item"> Golden Gate Highlands National Park </a>
-                            <a href="#" class="footer-item"> God’s Window </a>
+                            <div class="footer-title">Popular Destinations</div>
+                            @foreach(var item in @homepage.PopularDestinations){
+                            <a href="@item.Link.Url" class="footer-item"> @item.Title</a>
+                            }
                         </div>
                         <!--  -->
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-title">Things to do</div>
-                            <a href="#" class="footer-item"> Active Adventure </a>
-                            <a href="#" class="footer-item"> Wildlife Safari </a>
-                            <a href="#" class="footer-item"> Coastal Beach </a>
-                            <a href="#" class="footer-item"> Cultural Roots </a>
-                            <a href="#" class="footer-item"> Scenic Outdoors </a>
-                            <a href="#" class="footer-item"> City Lifestyle </a>
+                            @foreach(var item in @homepage.ThinksToDo){
+                            <a href="@item.Link.Url" class="footer-item">@item.Title</a>
+                            }
                         </div>
                         <!--  -->
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-title">Plan your trip</div>
-                            <a href="#" class="footer-item"> Itineraries </a>
-                            <a href="#" class="footer-item"> Visa & Immigration</a>
-                            <a href="#" class="footer-item"> COVID-19 Travel Updates </a>
-                            <a href="#" class="footer-item"> When to Visit</a>
-                            <a href="#" class="footer-item"> Getting Here: Flights to South Africa </a>
-                            <a href="#" class="footer-item"> Getting Around</a>
+                            @foreach(var item in @homepage.PlanYourTrip){
+                            <a href="@item.Link.Url" class="footer-item"> @item.Title </a>
+                            }
                         </div>
                         <!--  -->
 
                         <div class="col-lg-3 col-md-6 mt-md-5">
-                            <a href="#" class="footer-item"> South Africa: Revealed </a>
-                            <a href="#" class="footer-item"> More & More </a>
-                            <a href="#" class="footer-item"> Travel Trade </a>
-                            <a href="#" class="footer-item"> Partners </a>
-                            <a href="#" class="footer-item"> Facts </a>
-                            <a href="#" class="footer-item"> Blog </a>
-                            <a href="#" class="footer-item"> Newsroom </a>
-                            <a href="#" class="footer-item"> Contact Us </a>
+                            @foreach (var item in @homepage.OtherLinks)
+                            {
+                            <a href="@item.Link.Url" class="footer-item"> @item.Title</a>
+                            }
                         </div>
                         <!--  -->
                         <div class="copy-right">
@@ -197,18 +181,18 @@
         <!-- Page Scroll bar -->
         <!-- jquery file -->
 
-        <script src="assets/js/jquery.js"></script>
+        <script src="~/assets/js/jquery.js"></script>
 
         <!-- bootstrap js file -->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/js/menu.js"></script>
-        <script src="assets/js/fancybox.js"></script>
-        <script src="assets/js/slick.min.js"></script>
-        <script src="assets/js/css3-animate-it.js"></script>
+        <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="~/assets/js/menu.js"></script>
+        <script src="~/assets/js/fancybox.js"></script>
+        <script src="~/assets/js/slick.min.js"></script>
+        <script src="~/assets/js/css3-animate-it.js"></script>
 
-        <script src="assets/js/vertical-slide.js"></script>
+        <script src="~/assets/js/vertical-slide.js"></script>
 
-        <script src="assets/js/scripts.js"></script>
+        <script src="~/assets/js/scripts.js"></script>
 
         <div class="itinerary_style">
             <div class="itinerary">

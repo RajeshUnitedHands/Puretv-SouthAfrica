@@ -3,8 +3,8 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "Master.cshtml";
-    var model = Model.Root();
-    var rainbownation = model.Descendants<ContentModels.Rainbow>().Where(x => x.IsVisible());
+	var model = Model.Root();
+	var rainbownation = model.Descendants<ContentModels.Rainbow>().Where(x => x.IsVisible());
 	var tasteOfAdventure = model.Descendants<ContentModels.Adventure>().Where(x => x.IsVisible());
 	var seasons = model.Descendants<ContentModels.Season>().Where(x => x.IsVisible());
 }
@@ -14,7 +14,8 @@
 			<div class="col-12">
 				<div class="banner_container">
 					<div class="container">
-						<h1><span style="display: inline-block;"> @Model?.RevealedTitle </span> @Model?.RevealedSubtitle</h1>
+						<h1><span style="display: inline-block;"> @Model?.RevealedTitle </span> @Model?.RevealedSubtitle
+						</h1>
 
 						<!--  -->
 					</div>
@@ -51,11 +52,11 @@
 					@foreach (ContentModels.Rainbow item in rainbownation)
 					{
 						<div class="slide animated fadeInUpShort">
-						<div class="caption">@item.RainbowImageContent</div>
-						<div class="image_style">
-							<img src="@item.RainbowImage.Url()" class="image" />
+							<div class="caption">@item.RainbowImageContent</div>
+							<div class="image_style">
+								<img src="@item.RainbowImage.Url()" class="image" />
+							</div>
 						</div>
-					</div>
 					}
 				</div>
 			</div>
@@ -78,16 +79,16 @@
 				<div class="revealded_thumb animated fadeInUpShort">
 					@foreach (ContentModels.Season item in seasons)
 					{
-					<figure class="effect-lily">
-						<img src="@item?.SeasonImage.Url()" />
-						<figcaption>
-							<div>
-								<h2>@item?.SeasonImageTitle</h2>
-								<p>@item?.SeasonImageContent</p>					
-							</div>
-							<a href="#">View more</a>
-						</figcaption>
-					</figure>
+						<figure class="effect-lily">
+							<img src="@item?.SeasonImage.Url()" />
+							<figcaption>
+								<div>
+									<h2>@item?.SeasonImageTitle</h2>
+									<p>@item?.SeasonImageContent</p>
+								</div>
+								<a href="#">View more</a>
+							</figcaption>
+						</figure>
 					}
 				</div>
 			</div>
@@ -131,7 +132,7 @@
 					<div class="sec_heading">
 						<h1>@Model?.CurrencyTitle</h1>
 					</div>
-					<p>@Model?.CurrencyDescription</p> 
+					<p>@Model?.CurrencyDescription</p>
 				</div>
 
 				<div class="Currency_right">
@@ -175,15 +176,15 @@
 				<div class="Adventure_slider animated fadeInRightShort">
 					@foreach (ContentModels.Adventure item in tasteOfAdventure)
 					{
-					<div class="slide">
-						<div class="thumbnail_style">
-							<div class="bottom_patch">
-								<h2>@item.AdventureTitle</h2>
-								<p>@item.AdventureDescription</p>
+						<div class="slide">
+							<div class="thumbnail_style">
+								<div class="bottom_patch">
+									<h2>@item.AdventureTitle</h2>
+									<p>@item.AdventureDescription</p>
+								</div>
+								<img src="@item.AdventureImage.Url()" />
 							</div>
-							<img src="@item.AdventureImage.Url()"/>
 						</div>
-					</div>
 					}
 				</div>
 			</div>
