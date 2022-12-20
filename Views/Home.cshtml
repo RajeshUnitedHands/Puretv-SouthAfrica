@@ -275,7 +275,8 @@
                 <select class="form">
                     @foreach (var item in @Model.DropDown)
                     {
-                        var value = @item.City.Replace(" ", "-");
+                        string[] split = @item.City.Split(null);
+                        var value =  split[0] + "-" + split[1];                        
                         <option value="@value"> @item.City </option>
                     }
                 </select>
@@ -431,7 +432,7 @@
                     </ul>
                 </div>
                 <!-- cultural-Roots Start -->
-                <div class="box cultural-Roots">
+                <div class="box Cultural-Roots">
                     <ul class="map_points">
                         <li class="Northern_Cape">
                             <div class="img_div">
