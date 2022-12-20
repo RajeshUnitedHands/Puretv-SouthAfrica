@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Airline Partners</summary>
 	[PublishedModel("airlinePartners")]
-	public partial class AirlinePartners : PublishedElementModel
+	public partial class AirlinePartners : PublishedContentModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -41,7 +41,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		private IPublishedValueFallback _publishedValueFallback;
 
 		// ctor
-		public AirlinePartners(IPublishedElement content, IPublishedValueFallback publishedValueFallback)
+		public AirlinePartners(IPublishedContent content, IPublishedValueFallback publishedValueFallback)
 			: base(content, publishedValueFallback)
 		{
 			_publishedValueFallback = publishedValueFallback;

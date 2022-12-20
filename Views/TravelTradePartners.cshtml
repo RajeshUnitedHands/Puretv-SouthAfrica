@@ -5,6 +5,11 @@
     Layout = "Master.cshtml";
     var model = Model.Root();
     var deallist = model.Descendants<ContentModels.Deals>().Where(x => x.IsVisible());
+    var partner1 = model.Descendants<ContentModels.Partner>().Where(x => x.IsVisible());
+    var partner2 = model.Descendants<ContentModels.Partner2>().Where(x => x.IsVisible());
+    var partner3 = model.Descendants<ContentModels.Partner3>().Where(x => x.IsVisible());
+    var partner4 = model.Descendants<ContentModels.Partner4>().Where(x => x.IsVisible());
+    var airlines = model.Descendants<ContentModels.AirlinePartners>().Where(x => x.IsVisible());
 }
 <section class="banner_style" style="margin-bottom: 0px; background-image: url(@Model?.BackgroundImage.Url()">
     <div class="container">
@@ -78,105 +83,32 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="sec_heading">
-                                <h1>Partner Itineraries</h1>
+                                <h1>@Model?.PartnersTitle</h1>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="partners_wrp">
-                    <div class="container partner_logo"><img src="assets/images/partner_logo_thomas_cook.png" /></div>
+                    <div class="container partner_logo"><img src="@Model?.Partner1TitleLogo.Url()" /></div>
 
                     <div class="travel_trade animated fadeInRightShort">
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img01.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">Serene South Africa with Kruger</div>
-                                <div class="days_style">8 Days, 7 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                        @foreach (var item in partner1)
+                        {
+
+                            <div class="slide">
+                                <div class="thumbnail_style"><img src="@item.Image.Url()" /></div>
+                                <div class="slide_content">
+                                    <div class="place_name">@item.PlaceName</div>
+                                    <div class="days_style">@item.DayOfCount</div>
+                                    <div class="book_now_btn">
+                                        <a href="@item.BookNowLink.Url"> Book Now <i class="fa fa-long-arrow-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img02.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South Africa Splendor</div>
-                                <div class="days_style">9 Days, 8 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img03.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur</div>
-                                <div class="days_style">10 Days, 9 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img04.jpg" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur – Diwali Special</div>
-                                <div class="days_style">11 Days, 10 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img05.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Add on Kenya</div>
-                                <div class="days_style">13 Days, 12 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img06.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Kenyan Dhamaka</div>
-                                <div class="days_style">15 Days, 14 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img07.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Kenyan Discovery</div>
-                                <div class="days_style">16 Days, 15 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
-
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -191,19 +123,23 @@
         <div class="row animatedParent">
             <div class="col-12 NoPadMar">
                 <div class="partners_wrp partner_bg">
-                    <div class="container partner_logo"><img src="assets/images/partner_logo_SOTC.png" /></div>
+                    <div class="container partner_logo"><img src="@Model?.Partner2TitleLogo.Url()" /></div>
 
                     <div class="travel_trade animated fadeInRightShort">
+                        @foreach (var item in partner2)
+                        {     
                         <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img08.png" /></div>
+                            <div class="thumbnail_style"><img src="@item.Image.Url()" /></div>
                             <div class="slide_content">
-                                <div class="place_name">Serene South Africa with Kruger</div>
-                                <div class="days_style">8 Days, 7 Nights</div>
+                                <div class="place_name">@item.PlaceName</div>
+                                <div class="days_style">@item.DaysToGo</div>
                                 <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                    <a href="@item.BookNowLink.Url"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
                                 </div>
                             </div>
                         </div>
+                        }
+
                     </div>
 
                     <div class="clearfix"></div>
@@ -220,96 +156,24 @@
         <div class="row animatedParent">
             <div class="col-12 NoPadMar">
                 <div class="partners_wrp">
-                    <div class="container partner_logo"><img src="assets/images/partner_logo_Riya.png" /></div>
+                    <div class="container partner_logo"><img src="@Model?.Partner3TitleLogo.Url()" /></div>
 
                     <div class="travel_trade animated fadeInRightShort">
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img01.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">Serene South Africa with Kruger</div>
-                                <div class="days_style">8 Days, 7 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                        @foreach (var item in partner3)
+                        {
+                            <div class="slide">
+                                <div class="thumbnail_style"><img src="@item.Image.Url()" /></div>
+                                <div class="slide_content">
+                                    <div class="place_name">@item.PlaceName</div>
+                                    <div class="days_style">@item.DaysToGo</div>
+                                    <div class="book_now_btn">
+                                        <a href="@item.BookNowLink.Url"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                        }
                         <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img02.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South Africa Splendor</div>
-                                <div class="days_style">9 Days, 8 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img03.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur</div>
-                                <div class="days_style">10 Days, 9 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img04.jpg" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur – Diwali Special</div>
-                                <div class="days_style">11 Days, 10 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img05.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Add on Kenya</div>
-                                <div class="days_style">13 Days, 12 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img06.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Kenyan Dhamaka</div>
-                                <div class="days_style">15 Days, 14 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img07.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Kenyan Discovery</div>
-                                <div class="days_style">16 Days, 15 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="clearfix"></div>
@@ -326,96 +190,25 @@
         <div class="row animatedParent">
             <div class="col-12 NoPadMar">
                 <div class="partners_wrp partner_bg">
-                    <div class="container partner_logo"><img src="assets/images/partner_logo_AkberTravles.png" /></div>
+                    <div class="container partner_logo"><img src="@Model?.Partner4TitleLogo.Url()" /></div>
 
                     <div class="travel_trade animated fadeInRightShort">
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img01.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">Serene South Africa with Kruger</div>
-                                <div class="days_style">8 Days, 7 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
+                        @foreach (var item in partner4)
+                        {
+
+                            <div class="slide">
+                                <div class="thumbnail_style"><img src="@item.Image.Url()" /></div>
+                                <div class="slide_content">
+                                    <div class="place_name">@item.PlaceName</div>
+                                    <div class="days_style">@item.DaysToGo</div>
+                                    <div class="book_now_btn">
+                                        <a href="@item.BookNowLink.Url"> Book Now <i class="fa fa-long-arrow-right"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--  -->
+                        }
 
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img02.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South Africa Splendor</div>
-                                <div class="days_style">9 Days, 8 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img03.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur</div>
-                                <div class="days_style">10 Days, 9 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img04.jpg" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur – Diwali Special</div>
-                                <div class="days_style">11 Days, 10 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img05.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Add on Kenya</div>
-                                <div class="days_style">13 Days, 12 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img06.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Kenyan Dhamaka</div>
-                                <div class="days_style">15 Days, 14 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="slide">
-                            <div class="thumbnail_style"><img src="assets/images/travel-trade_img07.png" /></div>
-                            <div class="slide_content">
-                                <div class="place_name">South African Grandeur with Kenyan Discovery</div>
-                                <div class="days_style">16 Days, 15 Nights</div>
-                                <div class="book_now_btn">
-                                    <a href="#"> Book Now <i class="fa fa-long-arrow-right"></i> </a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="clearfix"></div>
@@ -435,17 +228,17 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="sec_heading">
-                                <h1>Airline Partners</h1>
+                                <h1>@Model?.AirLinesTitle</h1>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="airline_partners animated fadeInRightShort">
-                    @foreach (var item in @Model.AirLinePartners)
+                    @foreach (var item in airlines)
                     {
                         <div class="slide">
-                            <div class="thumbnail_style"><img src="@item.Logo.Url()"/></div>
+                            <div class="thumbnail_style"><img src="@item.Logo.Url()" /></div>
                         </div>
                     }
                 </div>

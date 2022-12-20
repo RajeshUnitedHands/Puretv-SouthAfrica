@@ -50,12 +50,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// AirLine Partners
+		/// AirLines Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("airLinePartners")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.AirlinePartners> AirLinePartners => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.AirlinePartners>>(_publishedValueFallback, "airLinePartners");
+		[ImplementPropertyType("airLinesTitle")]
+		public virtual string AirLinesTitle => this.Value<string>(_publishedValueFallback, "airLinesTitle");
 
 		///<summary>
 		/// Background Image
@@ -64,6 +64,54 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("backgroundImage")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops BackgroundImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "backgroundImage");
+
+		///<summary>
+		/// Deals Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("dealsTitle")]
+		public virtual string DealsTitle => this.Value<string>(_publishedValueFallback, "dealsTitle");
+
+		///<summary>
+		/// Partner 1 Title Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("partner1TitleLogo")]
+		public virtual global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent Partner1TitleLogo => this.Value<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>(_publishedValueFallback, "partner1TitleLogo");
+
+		///<summary>
+		/// Partner 2 Title Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("partner2TitleLogo")]
+		public virtual global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent Partner2TitleLogo => this.Value<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>(_publishedValueFallback, "partner2TitleLogo");
+
+		///<summary>
+		/// Partner 3 Title Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("partner3TitleLogo")]
+		public virtual global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent Partner3TitleLogo => this.Value<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>(_publishedValueFallback, "partner3TitleLogo");
+
+		///<summary>
+		/// Partner 4 Title Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("partner4TitleLogo")]
+		public virtual global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent Partner4TitleLogo => this.Value<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>(_publishedValueFallback, "partner4TitleLogo");
+
+		///<summary>
+		/// Partners Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("partnersTitle")]
+		public virtual string PartnersTitle => this.Value<string>(_publishedValueFallback, "partnersTitle");
 
 		///<summary>
 		/// Sub Title
