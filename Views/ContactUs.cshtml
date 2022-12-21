@@ -4,8 +4,9 @@
 @{
 	Layout = "Master.cshtml";
     var model = Model.Root();
-	var emergency = model.Descendants<ContentModels.EmergencySlide>().Where(x => x.IsVisible());
+	var emergency = model.Descendants<ContentModels.EmergencySlide>().Where(x => x.IsVisible()); 
 }
+
         <section class="banner_style contact_bg">
             <div class="container">
                 <div class="row">
@@ -119,227 +120,38 @@
                 <div class="sec_heading">
                     <h1>Frequently Asked Questions</h1>
                 </div>
-
-                <div class="accordion" id="accordionExample">
-                    <!-- Tab 1 starts -->
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                Visas & Entry
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="subhead_A1">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A1" aria-expanded="false" aria-controls="collapse_A1">
-                                            What are the entry requirements for Indian travelers?
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_A1" class="accordion-collapse collapse" aria-labelledby="subhead_A1">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                                            type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                                        </div>
-                                    </div>
+                    @foreach (var item in Model.QuestionList)
+                    {
+                    <div class="accordion" id="accordionExample">
+                        <!-- Tab 1 starts -->
+                        <div class="accordion-item">                      
+                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    @item.QaTitle
+                                </button>
+                            </h2>
+                                
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body"> 
+                                    <div class="accordion-item">
+                                    @foreach (var contact in @item.QaItems)
+                                        {
+                                            <h2 class="accordion-header" id="subhead_A1">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A1" aria-expanded="false" aria-controls="collapse_A1">
+                                                    @contact.Question
+                                                </button>
+                                            </h2>
+                                            <div id="collapse_A1" class="accordion-collapse collapse" aria-labelledby="subhead_A1">
+                                                <div class="accordion-body">
+                                                    @contact.Answer
+                                                </div>
+                                            </div>
+                                        }
                                 </div>
-
-                                <!--  -->
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="subhead_A2">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A2" aria-expanded="false" aria-controls="collapse_A2">
-                                            What are the types of visas I can apply for?
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_A2" class="accordion-collapse collapse" aria-labelledby="subhead_A2">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </div>
-                                    </div>
                                 </div>
-
-                                <!--  -->
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="subhead_A3">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A3" aria-expanded="false" aria-controls="collapse_A3">
-                                            How do I apply for a tourist visa?
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_A3" class="accordion-collapse collapse" aria-labelledby="subhead_A3">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--  -->
-
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="subhead_A4">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A4" aria-expanded="false" aria-controls="collapse_A4">
-                                            Do I have to be a vaccinated traveler to visit South Africa?
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_A4" class="accordion-collapse collapse" aria-labelledby="subhead_A4">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--  -->
-
-                                <div class="accordion-item" style="border-bottom: 0px;">
-                                    <h2 class="accordion-header" id="subhead_A5">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A5" aria-expanded="false" aria-controls="collapse_A5">
-                                            Do I need travel insurance when travelling to South Africa?
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_A5" class="accordion-collapse collapse" aria-labelledby="subhead_A5">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            </div>                                                                                                            
+                        </div> 
                     </div>
-
-                    <!-- Tab 2 starts -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-                                Money
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <!--  -->
-
-                                <div class="accordion-item border-bottom-0">
-                                    <h2 class="accordion-header" id="subhead_B1">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_B1" aria-expanded="false" aria-controls="collapse_B1">
-                                            Lorem Ipsum
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_B1" class="accordion-collapse collapse" aria-labelledby="subhead_B1">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tab 3 starts -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
-                                SIM Card
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <!--  -->
-
-                                <div class="accordion-item border-bottom-0">
-                                    <h2 class="accordion-header" id="subhead_C1">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_C1" aria-expanded="false" aria-controls="collapse_C1">
-                                            Lorem Ipsum
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_C1" class="accordion-collapse collapse" aria-labelledby="subhead_C1">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tab 4 starts -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingFoure">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFoure" aria-expanded="true" aria-controls="panelsStayOpen-collapseFoure">
-                                Accommodation
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseFoure" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFoure" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <!--  -->
-
-                                <div class="accordion-item border-bottom-0">
-                                    <h2 class="accordion-header" id="subhead_D1">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_D1" aria-expanded="false" aria-controls="collapse_D1">
-                                            Lorem Ipsum
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_D1" class="accordion-collapse collapse" aria-labelledby="subhead_D1">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tab 4 starts -->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="panelsStayOpen-collapseFive">
-                                Public Transport
-                            </button>
-                        </h2>
-                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingFive" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <!--  -->
-
-                                <div class="accordion-item border-bottom-0">
-                                    <h2 class="accordion-header" id="subhead_E1">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_E1" aria-expanded="false" aria-controls="collapse_E1">
-                                            Lorem Ipsum
-                                        </button>
-                                    </h2>
-                                    <div id="collapse_E1" class="accordion-collapse collapse" aria-labelledby="subhead_E1">
-                                        <div class="accordion-body">
-                                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                } 
             </div>
-        </section>
-
-        <!--  -->
-
-        <section class="offers_promotions NoPaMa">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="text">SIGN UP FOR SPECIAL OFFERS & PROMOTIONS</div>
-                        <div class="sign_up">
-                            <a href="#">
-                                <i class="fa fa-long-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <marquee id="MarqueeFooterId" class="footertext" onload="this.start();" onmouseover="this.stop();" onmouseout="this.start();" truespeed="" scrollamount="1" scrolldelay="20" direction="left" loop="repeat">
-                <span> Lorem ipsum dolor sit amet, consectetur</span>
-                <span> Lorem ipsum dolor sit amet, consectetur </span>
-                <span> Lorem ipsum dolor sit amet, consectetur</span>
-                <span> Lorem ipsum dolor sit amet, consectetur</span>
-                <span> Lorem ipsum dolor sit amet, consectetur</span>
-            </marquee>
-            <div class="clearfix"></div>
         </section>
