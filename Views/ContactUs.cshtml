@@ -3,6 +3,8 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
 	Layout = "Master.cshtml";
+    var model = Model.Root();
+	var emergency = model.Descendants<ContentModels.EmergencySlide>().Where(x => x.IsVisible());
 }
         <section class="banner_style contact_bg">
             <div class="container">
@@ -13,8 +15,8 @@
                                 <div class="contact_banner_wrp animatedParent">
                                     <div class="contact_banner animated fadeInLeftShort"><img src="@Model?.ContactImage.Url()" /></div>
                                     <div class="contact_right_form">
-                                        <h4><span> @Model?.ContactTitle<b>@Model?.ContactSubtitle</b></h4>
-
+                                        <h4><span> @Model?.ContactFirstTitle</span>@Model?.ContactSecondTitle<b> @Model?.ContactSubtitle</b></h4>
+                                        
                                         <div class="row input-container line_input">
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="styled-input">
@@ -95,32 +97,18 @@
                 <div class="row">
                     <div class="col-12 NoPadMar">
                         <div class="card_wrp caption">
-                            <div class="text">
-                                Emergency Contacts – <br />
-                                South Africa
+                            <div class="text"> @Model?.EmergencyTitle <br /> @Model?.EmergencySubtitle
                             </div>
                         </div>
 
                         <!--  -->
-
-                        <div class="card_wrp">
-                            <div class="icon"><img src="~/assets/images/contact_icon_01.png" /></div>
-                            <div class="text">Nationwide Emergency Response <b> 10111 </b></div>
+                        @foreach (ContentModels.EmergencySlide item in emergency)
+                        {
+                            <div class="card_wrp">
+                            <div class="icon"><img src="@item.EmergencyIcon.Url()" /></div>
+                            <div class="text">@item.EmergencyContactName <b> @item.EmergencyNumber </b></div>
                         </div>
-
-                        <!--  -->
-
-                        <div class="card_wrp">
-                            <div class="icon"><img src="~/assets/images/contact_icon_02.png" /></div>
-                            <div class="text">Cell phone emergency <b> 112 </b></div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="card_wrp">
-                            <div class="icon"><img src="~/assets/images/contact_icon_03.png" /></div>
-                            <div class="text">Ambulance <b> 10177 </b></div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
