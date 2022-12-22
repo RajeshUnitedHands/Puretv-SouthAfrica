@@ -50,6 +50,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Copyright
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("copyright")]
+		public virtual string Copyright => this.Value<string>(_publishedValueFallback, "copyright");
+
+		///<summary>
 		/// Description
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
@@ -106,12 +114,44 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string DescriptionTd5 => this.Value<string>(_publishedValueFallback, "descriptionTD5");
 
 		///<summary>
+		/// Disclaimer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("disclaimer")]
+		public virtual string Disclaimer => this.Value<string>(_publishedValueFallback, "disclaimer");
+
+		///<summary>
+		/// Disclaimer Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("disclaimerLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link DisclaimerLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "disclaimerLink");
+
+		///<summary>
 		/// DropDown
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("dropDown")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MapDropDown> DropDown => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MapDropDown>>(_publishedValueFallback, "dropDown");
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.Dropdown> DropDown => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.Dropdown>>(_publishedValueFallback, "dropDown");
+
+		///<summary>
+		/// Facebook Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("facebookLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link FacebookLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "facebookLink");
+
+		///<summary>
+		/// Footer Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("footerLogo")]
+		public virtual global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent FooterLogo => this.Value<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>(_publishedValueFallback, "footerLogo");
 
 		///<summary>
 		/// Banner
@@ -160,6 +200,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("imageTD5")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ImageTd5 => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "imageTD5");
+
+		///<summary>
+		/// Instagram Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("instagramLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link InstagramLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "instagramLink");
 
 		///<summary>
 		/// Link
@@ -274,6 +322,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.TitleLink> PopularDestinations => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.TitleLink>>(_publishedValueFallback, "popularDestinations");
 
 		///<summary>
+		/// Privacy Policy
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("privacyPolicy")]
+		public virtual string PrivacyPolicy => this.Value<string>(_publishedValueFallback, "privacyPolicy");
+
+		///<summary>
+		/// Privacy Policy Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("privacyPolicyLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link PrivacyPolicyLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "privacyPolicyLink");
+
+		///<summary>
 		/// Promotions Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
@@ -362,11 +426,27 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string TitleTd5 => this.Value<string>(_publishedValueFallback, "titleTD5");
 
 		///<summary>
+		/// Twitter Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("twitterLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link TwitterLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "twitterLink");
+
+		///<summary>
 		/// Welcome Notes
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("welcomeNotes")]
 		public virtual string WelcomeNotes => this.Value<string>(_publishedValueFallback, "welcomeNotes");
+
+		///<summary>
+		/// Youtube Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("youtubeLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link YoutubeLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "youtubeLink");
 	}
 }

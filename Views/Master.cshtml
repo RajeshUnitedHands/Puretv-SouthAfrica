@@ -4,7 +4,6 @@
 @{
 	Layout = null;
     var homepage = (ContentModels.Home) Model.Root();
-    var bucketList = homepage.Descendants<ContentModels.HomeContent>().Where(x => x.IsVisible());
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -144,31 +143,31 @@
                         <!--  -->
                         <div class="copy-right">
                             <div class="footer_logo">
-                                <img src="~/assets/images/Logo.png" />
+                                <img src="@homepage.FooterLogo.Url()" />
                             </div>
                             <div class="social-links">
                                 <div class="socila-icons">
-                                    <a href="#">
+                                    <a href="@homepage.InstagramLink.Url">
                                         <i class="fa fa-instagram"></i>
                                     </a>
                                 </div>
                                 <div class="socila-icons">
-                                    <a href="#">
+                                    <a href="@homepage.FacebookLink.Url">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </div>
                                 <div class="socila-icons">
-                                    <a href="#">
+                                    <a href="@homepage.YoutubeLink.Url">
                                         <i class="fa fa-youtube"></i>
                                     </a>
                                 </div>
                                 <div class="socila-icons">
-                                    <a href="#">
+                                    <a href="@homepage.TwitterLink.Url">
                                         <i class="fa fa-twitter"></i>
                                     </a>
                                 </div>
                             </div>
-                            © 2022. South African Tourism. All Rights Reserved. <a href="#"> Disclaimer </a> &nbsp; <a href="#"> Privacy Policy </a>
+                            @homepage.Copyright<a href="@homepage.DisclaimerLink.Url"> @homepage.Disclaimer </a> &nbsp; <a href="@homepage.PrivacyPolicyLink.Url"> @homepage.PrivacyPolicy</a>
                         </div>
                     </div>
                 </div>
