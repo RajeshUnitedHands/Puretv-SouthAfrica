@@ -190,41 +190,14 @@
 
                                         <div class="contentSection">
                                             <div class="content" data-number="1">
-                                                <div class="card">
-                                                    <div class="date">01-Jan-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
+                                                @foreach (var item in @Model.Jan)
+                                                {
+                                                    <div class="card">
+                                                        <div class="date">@item.Calendar</div>
+                                                        @item.Story
+                                                        <div class="publister"><a href="@item.MediaLink.Url"> @item.MediaName </a></div>
+                                                    </div>
+                                                }
                                             </div>
 
                                             <!--  -->
