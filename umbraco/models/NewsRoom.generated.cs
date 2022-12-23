@@ -48,5 +48,92 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// Jan
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("jan")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MediaStory> Jan => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.MediaStory>>(_publishedValueFallback, "jan");
+
+		///<summary>
+		/// Left Panel News
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("leftPanelNews")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.NewsroomContent> LeftPanelNews => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.NewsroomContent>>(_publishedValueFallback, "leftPanelNews");
+
+		///<summary>
+		/// Main Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mainImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MainImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "mainImage");
+
+		///<summary>
+		/// Main Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mainTitle")]
+		public virtual string MainTitle => this.Value<string>(_publishedValueFallback, "mainTitle");
+
+		///<summary>
+		/// Newspaper Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("newspaperLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link NewspaperLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "newspaperLink");
+
+		///<summary>
+		/// Newspaper Name
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("newspaperName")]
+		public virtual string NewspaperName => this.Value<string>(_publishedValueFallback, "newspaperName");
+
+		///<summary>
+		/// Newsroom Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[ImplementPropertyType("newsroomDate")]
+		public virtual global::System.DateTime NewsroomDate => this.Value<global::System.DateTime>(_publishedValueFallback, "newsroomDate");
+
+		///<summary>
+		/// Newsroom Link
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("newsroomLink")]
+		public virtual global::Umbraco.Cms.Core.Models.Link NewsroomLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "newsroomLink");
+
+		///<summary>
+		/// Newsroom Story
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("newsroomStory")]
+		public virtual string NewsroomStory => this.Value<string>(_publishedValueFallback, "newsroomStory");
+
+		///<summary>
+		/// Right Panel News
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("rightPanelNews")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.NewsroomContent> RightPanelNews => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.NewsroomContent>>(_publishedValueFallback, "rightPanelNews");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("title")]
+		public virtual string Title => this.Value<string>(_publishedValueFallback, "title");
 	}
 }

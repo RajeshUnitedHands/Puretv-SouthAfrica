@@ -18,7 +18,7 @@ using Umbraco.Extensions;
 
 namespace Umbraco.Cms.Web.Common.PublishedModels
 {
-	/// <summary>Map Pleces</summary>
+	/// <summary>Map Places</summary>
 	[PublishedModel("mapPlaces")]
 	public partial class MapPlaces : PublishedElementModel
 	{
