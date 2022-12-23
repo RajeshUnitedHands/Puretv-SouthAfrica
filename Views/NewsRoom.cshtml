@@ -78,296 +78,65 @@
 
         <!--  Media Stories Starts -->
 
+                                                    @{
+                                                var def = byte.MinValue;
+                                            }
+
         <section>
             <div class="container animatedParent">
                 <div class="row animated fadeInUpShort">
                     <div class="col-12">
                         <div class="sld-wrp">
                             <div class="slider-nav">
-                                <div class="slide-btn">Year 2022</div>
-                                <div class="slide-btn">Year 2021</div>
-                                <div class="slide-btn">Year 2020</div>
+                            @foreach(var item in @Model.MediaStory)
+                            {
+                                <div class="slide-btn">@item.Year</div>
+                            }
                             </div>
 
                             <div class="slider-for">
-                                <!-- Year 2022 Starts -->
-
+                            <!-- Year 2022 Starts -->
+                            @foreach(var item in @Model.MediaStory)
+                            {
                                 <div class="slide-container">
                                     <div class="container02">
                                         <div class="selectSection">
-                                            <button type="button" data-number="1" class="active">Jan</button>
-                                            <button type="button" data-number="2">Feb</button>
-                                            <button type="button" data-number="3">Mar</button>
-                                            <button type="button" data-number="4">Apr</button>
-                                            <button type="button" data-number="5">May</button>
-                                            <button type="button" data-number="6">Jun</button>
-                                            <button type="button" data-number="7">Oct</button>
-                                            <button type="button" data-number="8">Aug</button>
-                                            <button type="button" data-number="9">Sep</button>
-                                            <button type="button" data-number="10">Oct</button>
-                                            <button type="button" data-number="11">Nov</button>
-                                            <button type="button" data-number="12">Dec</button>
-                                        </div>
-
-                                        <h5>Media Stories</h5>
-
-                                        <div class="contentSection">
-                                            <div class="content" data-number="1">
-                                                @* @foreach (var item in @Model.Jan)
+                                            @foreach(var data in @item.Month)
+                                            {
+                                                def = ++def;
+                                                if(def == 1)
                                                 {
-                                                    <div class="card">
-                                                        <div class="date">@item.Calendar</div>
-                                                        @item.Story
-                                                        <div class="publister"><a href="@item.MediaLink.Url"> @item.MediaName </a></div>
-                                                    </div>
-                                                } *@
-                                            </div>
-
-                                            <!--  -->
-
-                                            <div class="content" data-number="2">
-                                                <div class="card">
-                                                    <div class="date">02-Feb-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">02-Feb-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">02-Feb-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">02-Feb-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">02-Feb-22</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="content" data-number="3"><p>March content</p></div>
-                                            <div class="content" data-number="4"><p>April content</p></div>
-                                            <div class="content" data-number="5"><p>May content</p></div>
-                                            <div class="content" data-number="6"><p>June content</p></div>
-                                            <div class="content" data-number="7"><p>July content</p></div>
-                                            <div class="content" data-number="8"><p>August content</p></div>
-                                            <div class="content" data-number="9"><p>September content</p></div>
-                                            <div class="content" data-number="10"><p>October content</p></div>
-                                            <div class="content" data-number="11"><p>November content</p></div>
-                                            <div class="content" data-number="12"><p>December content</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Year 2022 End -->
-
-                                <!-- Year 2021 Starts -->
-
-                                <div class="slide-container">
-                                    <div class="container02">
-                                        <div class="selectSection">
-                                            <button type="button" data-number="1" class="active">Jan</button>
-                                            <button type="button" data-number="2">Feb</button>
-                                            <button type="button" data-number="3">Mar</button>
-                                            <button type="button" data-number="4">Apr</button>
-                                            <button type="button" data-number="5">May</button>
-                                            <button type="button" data-number="6">Jun</button>
-                                            <button type="button" data-number="7">Oct</button>
-                                            <button type="button" data-number="8">Aug</button>
-                                            <button type="button" data-number="9">Sep</button>
-                                            <button type="button" data-number="10">Oct</button>
-                                            <button type="button" data-number="11">Nov</button>
-                                            <button type="button" data-number="12">Dec</button>
+                                                    <button type="button" data-number="@def" class="active">@data.Month</button>
+                                                }
+                                                else
+                                                {
+                                                    <button type="button" data-number="@def">@data.Month</button> 
+                                                }
+                                            }
                                         </div>
 
-                                        <h5>Media Stories</h5>
+                                        <h5>@Model.Title</h5>
 
                                         <div class="contentSection">
-                                            <div class="content" data-number="1">
-                                                <div class="card">
-                                                    <div class="date">01-Jan-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
+                                            @foreach(var data in @item.Month)
+                                            {
+                                                def = ++def;
+                                                <div class="content" data-number="@def">
+                                                    @foreach(var storyContent in @data.StoryContent)
+                                                    {
+                                                        <div class="card">
+                                                            <div class="date">@storyContent.Calendar</div>
+                                                            @storyContent.Story
+                                                            <div class="publister"><a href="@storyContent.MediaLink.Url"> @storyContent.MediaName </a></div>
+                                                        </div>
+                                                    }
                                                 </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-                                            </div>
-
-                                            <!--  -->
-
-                                            <div class="content" data-number="2">
-                                                <div class="card">
-                                                    <div class="date">01-Feb-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Feb-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Feb-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Feb-21</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="content" data-number="3"><p>March content</p></div>
-                                            <div class="content" data-number="4"><p>April content</p></div>
-                                            <div class="content" data-number="5"><p>May content</p></div>
-                                            <div class="content" data-number="6"><p>June content</p></div>
-                                            <div class="content" data-number="7"><p>July content</p></div>
-                                            <div class="content" data-number="8"><p>August content</p></div>
-                                            <div class="content" data-number="9"><p>September content</p></div>
-                                            <div class="content" data-number="10"><p>October content</p></div>
-                                            <div class="content" data-number="11"><p>November content</p></div>
-                                            <div class="content" data-number="12"><p>December content</p></div>
+                                            }
                                         </div>
                                     </div>
                                 </div>
-
-                                <!-- Year 2021 End -->
-
-                                <!-- Year 2020 Starts -->
-
-                                <div class="slide-container">
-                                    <div class="container02">
-                                        <div class="selectSection">
-                                            <button type="button" data-number="1" class="active">Jan</button>
-                                            <button type="button" data-number="2">Feb</button>
-                                            <button type="button" data-number="3">Mar</button>
-                                            <button type="button" data-number="4">Apr</button>
-                                            <button type="button" data-number="5">May</button>
-                                            <button type="button" data-number="6">Jun</button>
-                                            <button type="button" data-number="7">Oct</button>
-                                            <button type="button" data-number="8">Aug</button>
-                                            <button type="button" data-number="9">Sep</button>
-                                            <button type="button" data-number="10">Oct</button>
-                                            <button type="button" data-number="11">Nov</button>
-                                            <button type="button" data-number="12">Dec</button>
-                                        </div>
-
-                                        <h5>Media Stories</h5>
-
-                                        <div class="contentSection">
-                                            <div class="content" data-number="1">
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-                                            </div>
-
-                                            <!--  -->
-
-                                            <div class="content" data-number="2">
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travelscapes </a></div>
-                                                </div>
-
-                                                <div class="card">
-                                                    <div class="date">01-Jan-20</div>
-                                                    South Africa witnesses a surge in Indian Traveller demand for visas
-                                                    <div class="publister"><a href="#"> Travel Biz Monitor </a></div>
-                                                </div>
-                                            </div>
-
-                                            <div class="content" data-number="3"><p>March content</p></div>
-                                            <div class="content" data-number="4"><p>April content</p></div>
-                                            <div class="content" data-number="5"><p>May content</p></div>
-                                            <div class="content" data-number="6"><p>June content</p></div>
-                                            <div class="content" data-number="7"><p>July content</p></div>
-                                            <div class="content" data-number="8"><p>August content</p></div>
-                                            <div class="content" data-number="9"><p>September content</p></div>
-                                            <div class="content" data-number="10"><p>October content</p></div>
-                                            <div class="content" data-number="11"><p>November content</p></div>
-                                            <div class="content" data-number="12"><p>December content</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Year 2020 End -->
+                            <!-- Year 2022 End -->
+                            }
                             </div>
                         </div>
                     </div>
