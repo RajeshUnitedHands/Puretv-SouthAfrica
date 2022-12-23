@@ -9,17 +9,17 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="sec_heading">
-                            <h1>Top Stories</h1>
+                            <h1>@Model?.MainTitle</h1>
                         </div>
 
                         <div class="news_list animated fadeInUpShort">
-                            <div class="news_img"><img src="~/assets/images/news_banner.jpg" /></div>
+                            <div class="news_img"><img src="@Model?.MainImage.Url()" /></div>
                             <div class="news_content">
-                                <div class="date">28-Jul-22</div>
-                                <a href="https://indiaoutbound.info/trade-news/south-african-tourism-ties-up-with-air-seychelles/" target="_blank">
-                                    South African Tourism ties up with Air Seychelles to launch attractive airfares in Indian market
+                                <div class="date">@Model?.NewsroomDate</div>
+                                <a href="@Model?.NewsroomLink.Url" target="_blank">
+                                    @Model?.NewsroomStory
                                 </a>
-                                <div class="publister"><a href="https://indiaoutbound.info/trade-news/south-african-tourism-ties-up-with-air-seychelles/" target="_blank"> India Outbound </a></div>
+                                <div class="publister"><a href="@Model?.NewspaperLink.Url" target="_blank"> India Outbound </a></div>
                             </div>
                         </div>
                     </div>
@@ -33,121 +33,40 @@
             <div class="container animatedParent">
                 <div class="row animated fadeInUpShort">
                     <div class="col-md-6 left_news_style">
+                        @foreach(var leftPanel in Model.newsRoomContent)
+                        {
                         <div class="news_list">
-                            <div class="news_img"><img src="~/assets/images/News_001.jpg" /></div>
+                            <div class="news_img"><img src="@leftPanel?.Image.Url()" /></div>
 
                             <div class="news_content">
-                                <div class="date">14-May-22</div>
-                                <a href="https://travel.economictimes.indiatimes.com/news/aviation/international/emirates-south-african-tourism-partner-to-boost-visitor-arrivals/91555016" target="_blank">
-                                    Emirates, South African Tourism partner to boost visitor arrivals
+                                <div class="date">@leftPanel?.NewsDate</div>
+                                <a href="@leftPanel?.NewsStoryLink.Url" target="_blank">
+                                    @leftPanel?.NewsStory
                                 </a>
                                 <div class="publister">
-                                    <a href="https://travel.economictimes.indiatimes.com/news/aviation/international/emirates-south-african-tourism-partner-to-boost-visitor-arrivals/91555016" target="_blank"> The Economic Times </a>
+                                    <a href="@leftPanel?.NewsName.Url" target="_blank"> @leftPanel?.NewsLink </a>
                                 </div>
                             </div>
                         </div>
-
-                        <!--  -->
-
-                        <div class="news_list">
-                            <div class="news_img">
-                                <a href="#"> <img src="~/assets/images/News_002.jpg" /> </a>
-                            </div>
-
-                            <div class="news_content">
-                                <div class="date">20-May-22</div>
-                                <a
-                                    href="https://timesofindia.indiatimes.com/business/india-business/south-african-tourism-successfully-participates-in-satte-2022/articleshow/91672722.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst"
-                                    target="_blank"
-                                >
-                                    South African Tourism successfully participates in SATTE 2022
-                                </a>
-                                <div class="publister">
-                                    <a
-                                        href="https://timesofindia.indiatimes.com/business/india-business/south-african-tourism-successfully-participates-in-satte-2022/articleshow/91672722.cms?utm_source=contentofinterest&utm_medium=text&utm_campaign=cppst"
-                                        target="_blank"
-                                    >
-                                        The Times of India
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
 
                     <div class="col-md-6 right_news_style">
+                        @foreach( var rightPanel in newsRoomContent)
+                        {
                         <div class="news_list">
                             <div class="news_img">
-                                <a href="#"> <img src="~/assets/images/news_thumb01.jpg" /> </a>
+                                <a href="#"> <img src="@rightPanel?.Image.url()" /> </a>
                             </div>
                             <div class="news_content">
-                                <div class="date">20-May-22</div>
-                                <a href="https://www.businesstraveller.com/business-travel/2022/05/20/south-africa-witnesses-a-surge-in-indian-traveller-demand-for-visas/" target="">
-                                    South Africa witnesses a surge in Indian traveller demand for visas
+                                <div class="date">@rightPanel?.NewsDate</div>
+                                <a href="@rightPanel?.NewsStoryLink.Url" target="">
+                                    @rightPanel?.NewsStory
                                 </a>
-                                <div class="publister"><a href="https://www.businesstraveller.com/business-travel/2022/05/20/south-africa-witnesses-a-surge-in-indian-traveller-demand-for-visas/" target=""> Business Traveller </a></div>
+                                <div class="publister"><a href="@rightPanel?.NewsLink" target=""> @rightPanel?.NewsName </a></div>
                             </div>
                         </div>
-
-                        <!--  -->
-
-                        <div class="news_list">
-                            <div class="news_img">
-                                <a href="#"> <img src="~/assets/images/news_thumb02.jpg" /> </a>
-                            </div>
-                            <div class="news_content">
-                                <div class="date">28-Feb-22</div>
-                                <a
-                                    href="https://travel.economictimes.indiatimes.com/news/destination/international/south-african-tourism-announces-four-city-roadshow-in-march-across-mumbai-delhi-bengaluru-ahmedabad/89891001"
-                                    target="_blank"
-                                >
-                                    South African Tourism announces four-city roadshow in March across Mumbai, Delhi, Banaglore, Ahmedabad
-                                </a>
-                                <div class="publister">
-                                    <a
-                                        href="https://travel.economictimes.indiatimes.com/news/destination/international/south-african-tourism-announces-four-city-roadshow-in-march-across-mumbai-delhi-bengaluru-ahmedabad/89891001"
-                                        target="_blank"
-                                    >
-                                        The Economic Times
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="news_list">
-                            <div class="news_img">
-                                <a href="#"> <img src="~/assets/images/news_thumb03.jpg" /> </a>
-                            </div>
-                            <div class="news_content">
-                                <div class="date">15-Feb-22</div>
-                                <a href="https://www.financialexpress.com/brandwagon/south-african-tourism-has-rolled-out-more-more-campaign-with-an-aim-to-kickstarts-travel-recovery-efforts-in-india/2434726/" target="_blank">
-                                    South African Tourism has rolled out ‘More & More’ campaign with an aim to kickstarts travel recovery efforts in India
-                                </a>
-                                <div class="publister">
-                                    <a href="https://www.financialexpress.com/brandwagon/south-african-tourism-has-rolled-out-more-more-campaign-with-an-aim-to-kickstarts-travel-recovery-efforts-in-india/2434726/" target="_blank">
-                                        The Financial Express
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--  -->
-
-                        <div class="news_list">
-                            <div class="news_img">
-                                <a href="#"> <img src="~/assets/images/news_thumb04.jpg" /> </a>
-                            </div>
-                            <div class="news_content">
-                                <div class="date">09-Mar-22</div>
-                                <a href="https://www.thehindu.com/business/south-africa-tourism-to-introduce-e-visas-for-indians/article65208593.ece?msclkid=6209672bb1af11ecbd2e56f5ed6ffff9" target="_blank">
-                                    South Africa to introduce e-visas for Indians
-                                </a>
-                                <div class="publister">
-                                    <a href="https://www.thehindu.com/business/south-africa-tourism-to-introduce-e-visas-for-indians/article65208593.ece?msclkid=6209672bb1af11ecbd2e56f5ed6ffff9" target="_blank"> The Hindu </a>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
