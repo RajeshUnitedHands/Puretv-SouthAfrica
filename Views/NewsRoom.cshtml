@@ -15,7 +15,7 @@
                         <div class="news_list animated fadeInUpShort">
                             <div class="news_img"><img src="@Model?.MainImage.Url()" /></div>
                             <div class="news_content">
-                                <div class="date">@Model?.NewsroomDate</div>
+                                <div class="date">@Model?.NewsroomDate.ToString("dd-MMM-yy")</div>
                                 <a href="@Model?.NewsroomLink.Url" target="_blank">
                                     @Model?.NewsroomStory
                                 </a>
@@ -39,7 +39,7 @@
                             <div class="news_img"><img src="@leftPanel?.Image.Url()" /></div>
 
                             <div class="news_content">
-                                <div class="date">@leftPanel?.NewsDate</div>
+                                <div class="date">@leftPanel?.NewsDate.ToString("dd-MMM-yy")</div>
                                 <a href="@leftPanel?.NewsStoryLink.Url" target="_blank">
                                     @leftPanel?.NewsStory
                                 </a>
@@ -59,7 +59,7 @@
                                 <a href="#"> <img src="@rightPanel?.Image.Url()" /> </a>
                             </div>
                             <div class="news_content">
-                                <div class="date">@rightPanel?.NewsDate</div>
+                                <div class="date">@rightPanel?.NewsDate.ToString("dd-MMM-yy")</div>
                                 <a href="@rightPanel?.NewsStoryLink.Url" target="">
                                     @rightPanel?.NewsStory
                                 </a>
@@ -111,14 +111,14 @@
 
                                         <div class="contentSection">
                                             <div class="content" data-number="1">
-                                                @foreach (var item in @Model.Jan)
+                                                @* @foreach (var item in @Model.Jan)
                                                 {
                                                     <div class="card">
                                                         <div class="date">@item.Calendar</div>
                                                         @item.Story
                                                         <div class="publister"><a href="@item.MediaLink.Url"> @item.MediaName </a></div>
                                                     </div>
-                                                }
+                                                } *@
                                             </div>
 
                                             <!--  -->
