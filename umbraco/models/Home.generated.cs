@@ -274,7 +274,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.Link LogoLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "logoLink");
 
 		///<summary>
-		/// Nav Links
+		/// NavLinks
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]

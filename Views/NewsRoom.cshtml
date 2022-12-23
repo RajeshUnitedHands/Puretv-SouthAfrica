@@ -33,7 +33,7 @@
             <div class="container animatedParent">
                 <div class="row animated fadeInUpShort">
                     <div class="col-md-6 left_news_style">
-                        @foreach(var leftPanel in Model.newsRoomContent)
+                        @foreach(var leftPanel in Model.LeftPanelNews)
                         {
                         <div class="news_list">
                             <div class="news_img"><img src="@leftPanel?.Image.Url()" /></div>
@@ -44,7 +44,7 @@
                                     @leftPanel?.NewsStory
                                 </a>
                                 <div class="publister">
-                                    <a href="@leftPanel?.NewsName.Url" target="_blank"> @leftPanel?.NewsLink </a>
+                                    <a href="@leftPanel?.NewsLink.Url" target="_blank"> @leftPanel?.NewsName </a>
                                 </div>
                             </div>
                         </div>
@@ -52,18 +52,20 @@
                     </div>
 
                     <div class="col-md-6 right_news_style">
-                        @foreach( var rightPanel in newsRoomContent)
+                        @foreach( var rightPanel in Model.RightPanelNews)
                         {
                         <div class="news_list">
                             <div class="news_img">
-                                <a href="#"> <img src="@rightPanel?.Image.url()" /> </a>
+                                <a href="#"> <img src="@rightPanel?.Image.Url()" /> </a>
                             </div>
                             <div class="news_content">
                                 <div class="date">@rightPanel?.NewsDate</div>
                                 <a href="@rightPanel?.NewsStoryLink.Url" target="">
                                     @rightPanel?.NewsStory
                                 </a>
-                                <div class="publister"><a href="@rightPanel?.NewsLink" target=""> @rightPanel?.NewsName </a></div>
+                                <div class="publister">
+                                    <a href="@rightPanel?.NewsLink.Url" target=""> @rightPanel?.NewsName </a>
+                                </div>
                             </div>
                         </div>
                         }
