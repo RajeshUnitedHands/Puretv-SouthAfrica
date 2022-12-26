@@ -78,10 +78,6 @@
 
         <!--  Media Stories Starts -->
 
-                                                    @{
-                                                var def = byte.MinValue;
-                                            }
-
         <section>
             <div class="container animatedParent">
                 <div class="row animated fadeInUpShort">
@@ -98,19 +94,23 @@
                             <!-- Year 2022 Starts -->
                             @foreach(var item in @Model.MediaStory)
                             {
+                                var dataNumber = byte.MinValue;
+                                var dataNumberMonth = byte.MinValue;
+
                                 <div class="slide-container">
                                     <div class="container02">
                                         <div class="selectSection">
                                             @foreach(var data in @item.Month)
                                             {
-                                                def = ++def;
-                                                if(def == 1)
+                                                dataNumber = ++dataNumber;
+
+                                                if(dataNumber == 1)
                                                 {
-                                                    <button type="button" data-number="@def" class="active">@data.Month</button>
+                                                    <button type="button" data-number="@dataNumber" class="active">@data.Month</button>
                                                 }
                                                 else
                                                 {
-                                                    <button type="button" data-number="@def">@data.Month</button> 
+                                                    <button type="button" data-number="@dataNumber">@data.Month</button> 
                                                 }
                                             }
                                         </div>
@@ -120,14 +120,15 @@
                                         <div class="contentSection">
                                             @foreach(var data in @item.Month)
                                             {
-                                                def = ++def;
-                                                <div class="content" data-number="@def">
+                                                dataNumberMonth = ++dataNumberMonth;
+
+                                                <div class="content" data-number="@dataNumberMonth">
                                                     @foreach(var storyContent in @data.StoryContent)
                                                     {
                                                         <div class="card">
                                                             <div class="date">@storyContent.Calendar</div>
                                                             @storyContent.Story
-                                                            <div class="publister"><a href="@storyContent.MediaLink.Url"> @storyContent.MediaName </a></div>
+                                                            <div class="publister"><a href="@storyContent?.MediaLink?.Url"> @storyContent.MediaName </a></div>
                                                         </div>
                                                     }
                                                 </div>
