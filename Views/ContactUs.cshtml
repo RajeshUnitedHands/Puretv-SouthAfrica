@@ -120,38 +120,49 @@
                 <div class="sec_heading">
                     <h1>Frequently Asked Questions</h1>
                 </div>
+
+                <div class="accordion" id="accordionExample">
+                    @{
+                        var show = "show";
+                    }
+                        <!-- Tab 1 starts -->
                     @foreach (var item in Model.QuestionList)
                     {
-                    <div class="accordion" id="accordionExample">
-                        <!-- Tab 1 starts -->
-                        <div class="accordion-item">                      
-                            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                                    @item.QaTitle
-                                </button>
-                            </h2>
-                                
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body"> 
-                                    <div class="accordion-item">
-                                    @foreach (var contact in @item.QaItems)
-                                        {
-                                            <h2 class="accordion-header" id="subhead_A1">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_A1" aria-expanded="false" aria-controls="collapse_A1">
-                                                    @contact.Question
-                                                </button>
-                                            </h2>
-                                            <div id="collapse_A1" class="accordion-collapse collapse" aria-labelledby="subhead_A1">
-                                                <div class="accordion-body">
-                                                    @contact.Answer
-                                                </div>
-                                            </div>
-                                        }
+                        string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                        Random rand = new Random();
+                        var value = chars[rand.Next(0, chars.Length)];
+
+                    <div class="accordion-item">                      
+                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#@value" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                @item.QaTitle
+                            </button>
+                        </h2>
+
+                        <div id="@value" class="accordion-collapse collapse @show" aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body"> 
+                            @foreach (var contact in @item.QaItems)
+                            {
+                                value = chars[rand.Next(0, chars.Length)];
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="subhead_A1">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@value" aria-expanded="false" aria-controls="collapse_A1">
+                                            @contact.Question
+                                        </button>
+                                    </h2>
+                                    <div id="@value" class="accordion-collapse collapse" aria-labelledby="subhead_A1">
+                                        <div class="accordion-body">
+                                            @contact.Answer
+                                        </div>
+                                    </div>
                                 </div>
-                                </div>
-                            </div>                                                                                                            
-                        </div> 
+                            }                                                                                                         
+                            </div>
+                        </div>   
                     </div>
-                } 
+                    show = null;
+                    } 
+                </div>
             </div>
         </section>
