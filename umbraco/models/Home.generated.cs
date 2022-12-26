@@ -274,6 +274,46 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.Link LogoLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "logoLink");
 
 		///<summary>
+		/// Map Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapDescription")]
+		public virtual string MapDescription => this.Value<string>(_publishedValueFallback, "mapDescription");
+
+		///<summary>
+		/// Map Heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapHeading")]
+		public virtual string MapHeading => this.Value<string>(_publishedValueFallback, "mapHeading");
+
+		///<summary>
+		/// Map Icon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapIcon")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops MapIcon => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "mapIcon");
+
+		///<summary>
+		/// Map Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapTitle")]
+		public virtual string MapTitle => this.Value<string>(_publishedValueFallback, "mapTitle");
+
+		///<summary>
+		/// Map Video
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("mapVideo")]
+		public virtual string MapVideo => this.Value<string>(_publishedValueFallback, "mapVideo");
+
+		///<summary>
 		/// NavLinks
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
