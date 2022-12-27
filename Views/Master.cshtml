@@ -2,8 +2,8 @@
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @inherits UmbracoViewPage
 @{
-	Layout = null;
-    var homepage = (ContentModels.Home) Model.Root();
+    Layout = null;
+    var homepage = (ContentModels.Home)Model.Root();
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +12,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <link rel="icon" type="image/x-icon" href="~/assets/images/favicon.ico" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
         <!-- bootstrap css file -->
         <link rel="stylesheet" href="~/assets/css/bootstrap.min.css" />
         <!-- all.min.css file -->
@@ -48,22 +49,17 @@
                                 </label>
 
                                 <ul class="nav-links">
-                                @{
-                                var links = homepage.NavLinks;
-                                if (links.Any())
-                                {
-                                    @foreach (var link in links)
+                                    @foreach (var link in homepage.NavLinks)
                                     {
-                                        <li  class="nav-link @(link.Name==Model.Name ? "active" :null)"><a href="@link.Url">
-                                                @link.Name </a>
+                                        <li class="nav-link">
+                                            <a href="@link.Url"> @link.Name </a>
                                         </li>
-                                    }                             
-                                }
-                            }
+                                    }
                                 </ul>
 
                                 <div class="search_icon">
-                                    <a data-fancybox data-src="#trueModal" href="javascript:;"> <i class="fa fa-search" aria-hidden="true"></i> </a>
+                                    <a data-fancybox data-src="#trueModal" href="javascript:;"> <i class="fa fa-search"
+                                            aria-hidden="true"></i> </a>
                                 </div>
 
                                 <div class="search_popup" style="display: none;" id="trueModal">
@@ -87,7 +83,7 @@
                 </div>
             </div>
         </header>
-		@RenderBody()
+        @RenderBody()
         <section class="offers_promotions NoPaMa">
             <div class="container">
                 <div class="row">
@@ -101,10 +97,11 @@
                     </div>
                 </div>
             </div>
-            <marquee id="MarqueeFooterId" class="footertext" onload="this.start();" onmouseover="this.stop();" onmouseout="this.start();" truespeed="" scrollamount="1" scrolldelay="20" direction="left" loop="repeat">
+            <marquee id="MarqueeFooterId" class="footertext" onload="this.start();" onmouseover="this.stop();"
+                onmouseout="this.start();" truespeed="" scrollamount="1" scrolldelay="20" direction="left" loop="repeat">
                 @foreach (var item in @homepage.Offers.ToList())
                 {
-                <span> @item</span>
+                    <span> @item</span>
                 }
             </marquee>
             <div class="clearfix"></div>
@@ -115,22 +112,25 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-title">Popular Destinations</div>
-                            @foreach(var item in @homepage.PopularDestinations){
-                            <a href="@item.Link.Url" class="footer-item"> @item.Title</a>
+                            @foreach (var item in @homepage.PopularDestinations)
+                            {
+                                <a href="@item.Link.Url" class="footer-item"> @item.Title</a>
                             }
                         </div>
                         <!--  -->
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-title">Things to do</div>
-                            @foreach(var item in @homepage.ThinksToDo){
-                            <a href="@item.Link.Url" class="footer-item">@item.Title</a>
+                            @foreach (var item in @homepage.ThinksToDo)
+                            {
+                                <a href="@item.Link.Url" class="footer-item">@item.Title</a>
                             }
                         </div>
                         <!--  -->
                         <div class="col-lg-3 col-md-6">
                             <div class="footer-title">Plan your trip</div>
-                            @foreach(var item in @homepage.PlanYourTrip){
-                            <a href="@item.Link.Url" class="footer-item"> @item.Title </a>
+                            @foreach (var item in @homepage.PlanYourTrip)
+                            {
+                                <a href="@item.Link.Url" class="footer-item"> @item.Title </a>
                             }
                         </div>
                         <!--  -->
@@ -138,7 +138,7 @@
                         <div class="col-lg-3 col-md-6 mt-md-5">
                             @foreach (var item in @homepage.OtherLinks)
                             {
-                            <a href="@item.Link.Url" class="footer-item"> @item.Title</a>
+                                <a href="@item.Link.Url" class="footer-item"> @item.Title</a>
                             }
                         </div>
                         <!--  -->
@@ -168,13 +168,14 @@
                                     </a>
                                 </div>
                             </div>
-                            @homepage.Copyright<a href="@homepage.DisclaimerLink.Url"> @homepage.Disclaimer </a> &nbsp; <a href="@homepage.PrivacyPolicyLink.Url"> @homepage.PrivacyPolicy</a>
+                            @homepage.Copyright<a href="@homepage.DisclaimerLink.Url"> @homepage.Disclaimer </a> &nbsp; <a
+                                href="@homepage.PrivacyPolicyLink.Url"> @homepage.PrivacyPolicy</a>
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
-		        <div class="scrollbar">
+        <div class="scrollbar">
             <div class="scrollball">
                 <span></span>
             </div>
