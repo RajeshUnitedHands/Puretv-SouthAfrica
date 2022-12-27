@@ -78,6 +78,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("story")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Story => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "story");
+		public virtual string Story => this.Value<string>(_publishedValueFallback, "story");
 	}
 }

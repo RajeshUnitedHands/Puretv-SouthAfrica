@@ -206,7 +206,7 @@
                                                     @foreach(var storyContent in @data.StoryContent)
                                                     {
                                                         <div class="card">
-                                                            <div class="date">@storyContent.Calendar</div>
+                                                            <div class="date">@storyContent.Calendar.ToString("dd-MMM-yy")</div>
                                                             @storyContent.Story
                                                             <div class="publister"><a href="@storyContent?.MediaLink?.Url"> @storyContent.MediaName </a></div>
                                                         </div>
