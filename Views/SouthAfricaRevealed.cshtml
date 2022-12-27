@@ -8,7 +8,7 @@
 	var tasteOfAdventure = model.Descendants<ContentModels.Adventure>().Where(x => x.IsVisible());
 	var seasons = model.Descendants<ContentModels.Season>().Where(x => x.IsVisible());
 }
-<section class="banner_style revealed_bg" style="background-image:url(@Model?.RevealedImage.Url())">
+<section class="banner_style" style="margin-bottom: 0px; background-image:url(@Model?.RevealedImage.Url())">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
