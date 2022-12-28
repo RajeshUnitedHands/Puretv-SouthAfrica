@@ -124,34 +124,37 @@
                 <div class="accordion" id="accordionExample">
                     @{
                         var show = "show";
+                        var border_bottom_0 = string.Empty;
+                        var collapsed = string.Empty;
+                        var number = byte.MinValue;
+                        var value_ = byte.MinValue;
                     }
                         <!-- Tab 1 starts -->
                     @foreach (var item in Model.QuestionList)
                     {
-                        string chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-                        Random rand = new Random();
-                        var value = chars[rand.Next(0, chars.Length)];
+                        number = ++number;
+                        value_ = ++value_;
 
                     <div class="accordion-item">                      
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#@value" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        <h2 class="accordion-header" id="panelsStayOpen-@number">
+                            <button class="accordion-button @collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse-@number" aria-expanded="true" aria-controls="panelsStayOpen-collapse-@number">
                                 @item.QaTitle
                             </button>
                         </h2>
 
-                        <div id="@value" class="accordion-collapse collapse @show" aria-labelledby="panelsStayOpen-headingOne" data-bs-parent="#accordionExample">
+                        <div id="panelsStayOpen-collapse-@number" class="accordion-collapse collapse @show" aria-labelledby="panelsStayOpen-@number" data-bs-parent="#accordionExample">
                             <div class="accordion-body"> 
                             @foreach (var contact in @item.QaItems)
                             {
-                                value = chars[rand.Next(0, chars.Length)];
+                                number = ++number;
 
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="subhead_A1">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@value" aria-expanded="false" aria-controls="collapse_A1">
+                                <div class="accordion-item @border_bottom_0">
+                                    <h2 class="accordion-header" id="subhead_@value_@number">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_@value_@number" aria-expanded="false" aria-controls="collapse_@value_@number">
                                             @contact.Question
                                         </button>
                                     </h2>
-                                    <div id="@value" class="accordion-collapse collapse" aria-labelledby="subhead_A1">
+                                    <div id="collapse_@value_@number" class="accordion-collapse collapse" aria-labelledby="subhead_@value_@number">
                                         <div class="accordion-body">
                                             @contact.Answer
                                         </div>
@@ -162,6 +165,8 @@
                         </div>   
                     </div>
                     show = null;
+                    border_bottom_0 = "border-bottom-0";
+                    collapsed = "collapsed";
                     } 
                 </div>
             </div>
