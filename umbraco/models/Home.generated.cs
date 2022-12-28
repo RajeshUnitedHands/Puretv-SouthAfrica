@@ -79,7 +79,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("descriptionTD1")]
-		public virtual string DescriptionTd1 => this.Value<string>(_publishedValueFallback, "descriptionTD1");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString DescriptionTd1 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "descriptionTD1");
 
 		///<summary>
 		/// Description
@@ -87,7 +87,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("descriptionTD2")]
-		public virtual string DescriptionTd2 => this.Value<string>(_publishedValueFallback, "descriptionTD2");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString DescriptionTd2 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "descriptionTD2");
 
 		///<summary>
 		/// Description
@@ -95,7 +95,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("descriptionTD3")]
-		public virtual string DescriptionTd3 => this.Value<string>(_publishedValueFallback, "descriptionTD3");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString DescriptionTd3 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "descriptionTD3");
 
 		///<summary>
 		/// Description
@@ -103,7 +103,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("descriptionTD4")]
-		public virtual string DescriptionTd4 => this.Value<string>(_publishedValueFallback, "descriptionTD4");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString DescriptionTd4 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "descriptionTD4");
 
 		///<summary>
 		/// Description
@@ -111,7 +111,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("descriptionTD5")]
-		public virtual string DescriptionTd5 => this.Value<string>(_publishedValueFallback, "descriptionTD5");
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString DescriptionTd5 => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "descriptionTD5");
 
 		///<summary>
 		/// Disclaimer
