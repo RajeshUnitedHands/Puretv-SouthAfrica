@@ -86,7 +86,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("newsStory")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString NewsStory => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "newsStory");
+		public virtual string NewsStory => this.Value<string>(_publishedValueFallback, "newsStory");
 
 		///<summary>
 		/// News Story Link
