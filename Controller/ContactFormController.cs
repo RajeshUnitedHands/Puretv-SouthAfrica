@@ -8,15 +8,18 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Infrastructure.Persistence;
 using Umbraco.Cms.Web.Common.PublishedModels;
 using Umbraco.Cms.Web.Website.Controllers;
-
+using Umbraco.Web.Mvc;
 
 namespace Umbraco.Cms.Web.Common.Controllers
 {
     public class ContactFormController : SurfaceController
     {
-        public ContactFormController(IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
-        {
-        }
+        // private readonly IConfiguration _config;
+        // public ContactFormController(IConfiguration config, IUmbracoContextAccessor umbracoContextAccessor, IUmbracoDatabaseFactory databaseFactory, ServiceContext services, AppCaches appCaches, IProfilingLogger profilingLogger, IPublishedUrlProvider publishedUrlProvider) : base(umbracoContextAccessor, databaseFactory, services, appCaches, profilingLogger, publishedUrlProvider)
+        // {
+        //      _config = config;       
+        // }
+
 
         [HttpPost]
         public ActionResult SubmitForm(ContactForm model)
@@ -27,12 +30,17 @@ namespace Umbraco.Cms.Web.Common.Controllers
                 mailMessage.Subject = model.FullName;
                 mailMessage.Body = model.YourQuestions;
 
-                SmtpClient smtpClient = new SmtpClient("127.0.0.1",25);
+                SmtpClient smtpClient = new SmtpClient("127.0.0.1", 25);
+                // SmtpClient smtpClient = new SmtpClient(_config.GetSection("SMTPServer").Value, 587);
                 smtpClient.Send(mailMessage);
+                TempData["ContactResult"] = "Has been Sent..."; 
 
-                return Ok();
+            //     return Ok();
+            // }
+            // return Ok();
+            return RedirectToCurrentUmbracoPage();
             }
-            return Ok();
+            return CurrentUmbracoPage();
         }
 
     }
