@@ -18,8 +18,8 @@
                                     <div class="contact_right_form">
                                         <h4><span> @Model?.ContactFirstTitle</span>@Model?.ContactSecondTitle<b> @Model?.ContactSubtitle</b></h4>
                                         
-                                        @using (Html.BeginUmbracoForm("SubmitForm","ContactFormController", FormMethod.Post))
-                                        {
+                                        @* @using (Html.BeginUmbracoForm("SubmitForm","ContactFormController", FormMethod.Post))
+                                        { *@
                                             <div class="row input-container line_input">
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="styled-input">
@@ -60,7 +60,7 @@
                                             <div class="col-xs-12"></div>
                                             <button type="submit" class="submit_btn" value="Submit Your Request">Submit Your Request</button>
                                         </div>
-                                        }
+                                        @* } *@
                                     </div>
                                 </div>
 
