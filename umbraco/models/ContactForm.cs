@@ -15,7 +15,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
         [DataType(DataType.PhoneNumber)]
         public long PhoneNumber { get; set;}
         [Required]
-        public string YourQuestions { get; set;}
+        public string YourQuestion { get; set;}
     
     }
 

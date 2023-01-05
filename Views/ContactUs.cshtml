@@ -18,7 +18,7 @@
                                     <div class="contact_right_form">
                                         <h4><span> @Model?.ContactFirstTitle</span>@Model?.ContactSecondTitle<b> @Model?.ContactSubtitle</b></h4>
                                         
-                                        @using (Html.BeginUmbracoForm("SubmitForm","ContactSurface", FormMethod.Post))
+                                        @using (Html.BeginUmbracoForm("SubmitForm","ContactSmtp", FormMethod.Post))
                                         {
                                             <div class="row input-container line_input">
                                             <div class="col-md-6 col-sm-12">
@@ -52,7 +52,7 @@
                                             <div class="col-xs-12">
                                                 <div class="styled-input wide">
                                                     <textarea id ="YourQuestion" name ="YourQuestion" required></textarea>
-                                                    <label>@Model?.YourQuestion <span>*</span> </label>
+                                                    <label>@Model?.YourQuestion<span>*</span> </label>
                                                     <div class="send_icon_style"></div>
                                                 </div>
                                             </div>
