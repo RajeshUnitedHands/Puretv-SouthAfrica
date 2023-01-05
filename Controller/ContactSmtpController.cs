@@ -65,14 +65,18 @@ namespace Umbraco.Cms.Web.Common.Controllers
                 var subject = string.Format("Enquiry from: {0} - {1}", model.FullName, model.Email);
 
                 var email = new MimeMessage();
-                email.From.Add(MailboxAddress.Parse("noreply@auxesys.in"));
+                // email.From.Add(MailboxAddress.Parse("noreply@auxesys.in"));
+                // email.To.Add(MailboxAddress.Parse("anitha.k@unitedhands.cc"));
+                email.From.Add(MailboxAddress.Parse(_config.GetSection("SMTPUser").Value));
                 email.To.Add(MailboxAddress.Parse("anitha.k@unitedhands.cc"));
                 email.Subject = subject;
                 email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = message };
 
                 using var smtp = new SmtpClient();
-                smtp.Connect("mail.auxesys.in", 587, MailKit.Security.SecureSocketOptions.StartTls);
-                smtp.Authenticate("noreply@auxesys.in", "fprFkU[7ENA");
+                // smtp.Connect("mail.auxesys.in", 587, MailKit.Security.SecureSocketOptions.StartTls);
+                // smtp.Authenticate("noreply@auxesys.in", "fprFkU[7ENA");
+                smtp.Connect(_config.GetSection("SMTPServer").Value, 587, MailKit.Security.SecureSocketOptions.StartTls);
+                smtp.Authenticate(_config.GetSection("SMTPUser").Value, _config.GetSection("SMTPPassword").Value);
                 smtp.Send(email);
                 smtp.Disconnect(true);
                 
