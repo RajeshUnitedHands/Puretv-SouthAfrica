@@ -64,23 +64,31 @@ namespace Umbraco.Cms.Web.Common.Controllers
                 var message = model.YourQuestion;
                 var subject = string.Format("Enquiry from: {0} - {1}", model.FullName, model.Email);
 
+                /*Sending Mail to the Admin*/
                 var email = new MimeMessage();
-                // email.From.Add(MailboxAddress.Parse("noreply@auxesys.in"));
-                // email.To.Add(MailboxAddress.Parse("anitha.k@unitedhands.cc"));
                 email.From.Add(MailboxAddress.Parse(_config.GetSection("SMTPUser").Value));
                 email.To.Add(MailboxAddress.Parse("anitha.k@unitedhands.cc"));
                 email.Subject = subject;
                 email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = message };
 
                 using var smtp = new SmtpClient();
-                // smtp.Connect("mail.auxesys.in", 587, MailKit.Security.SecureSocketOptions.StartTls);
-                // smtp.Authenticate("noreply@auxesys.in", "fprFkU[7ENA");
                 smtp.Connect(_config.GetSection("SMTPServer").Value, 587, MailKit.Security.SecureSocketOptions.StartTls);
                 smtp.Authenticate(_config.GetSection("SMTPUser").Value, _config.GetSection("SMTPPassword").Value);
                 smtp.Send(email);
-                smtp.Disconnect(true);
-                
+
                 _logger.LogInformation("Contact Form Submitted Successfully");
+
+                /*Sending Acknowledgement Mail to the users*/
+                var replyEmail = new MimeMessage();
+                var replyEmailBody = "Thank you for your interest in our Services";
+
+                replyEmail.From.Add(MailboxAddress.Parse(_config.GetSection("SMTPUser").Value));
+                replyEmail.To.Add(MailboxAddress.Parse(model.Email));
+                replyEmail.Subject = "Acknowledgement Mail";
+                replyEmail.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = replyEmailBody };
+                smtp.Send(replyEmail);
+ 
+                smtp.Disconnect(true);              
                 return true;
             }
             
@@ -89,7 +97,6 @@ namespace Umbraco.Cms.Web.Common.Controllers
                 _logger.LogError(ex, "Error When Submitting Contact Form");
                 return false;
             }
-
         }
     }
 }
