@@ -144,5 +144,53 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("seasonTitle")]
 		public virtual string SeasonTitle => this.Value<string>(_publishedValueFallback, "seasonTitle");
+
+		///<summary>
+		/// Tab1
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("tab1")]
+		public virtual string Tab1 => this.Value<string>(_publishedValueFallback, "tab1");
+
+		///<summary>
+		/// Tab2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("tab2")]
+		public virtual string Tab2 => this.Value<string>(_publishedValueFallback, "tab2");
+
+		///<summary>
+		/// Tab3
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("tab3")]
+		public virtual string Tab3 => this.Value<string>(_publishedValueFallback, "tab3");
+
+		///<summary>
+		/// Tab4
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("tab4")]
+		public virtual string Tab4 => this.Value<string>(_publishedValueFallback, "tab4");
+
+		///<summary>
+		/// Tab5
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("tab5")]
+		public virtual string Tab5 => this.Value<string>(_publishedValueFallback, "tab5");
+
+		///<summary>
+		/// Tab6
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("tab6")]
+		public virtual string Tab6 => this.Value<string>(_publishedValueFallback, "tab6");
 	}
 }

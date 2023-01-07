@@ -50,12 +50,28 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Contact First Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactFirstTitle")]
+		public virtual string ContactFirstTitle => this.Value<string>(_publishedValueFallback, "contactFirstTitle");
+
+		///<summary>
 		/// Contact Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("contactImage")]
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops ContactImage => this.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(_publishedValueFallback, "contactImage");
+
+		///<summary>
+		/// Contact Second Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("contactSecondTitle")]
+		public virtual string ContactSecondTitle => this.Value<string>(_publishedValueFallback, "contactSecondTitle");
 
 		///<summary>
 		/// Contact Subtitle
@@ -66,20 +82,28 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string ContactSubtitle => this.Value<string>(_publishedValueFallback, "contactSubtitle");
 
 		///<summary>
-		/// Contact Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("contactTitle")]
-		public virtual string ContactTitle => this.Value<string>(_publishedValueFallback, "contactTitle");
-
-		///<summary>
 		/// Email
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("email")]
 		public virtual string Email => this.Value<string>(_publishedValueFallback, "email");
+
+		///<summary>
+		/// Emergency Subtitle
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("emergencySubtitle")]
+		public virtual string EmergencySubtitle => this.Value<string>(_publishedValueFallback, "emergencySubtitle");
+
+		///<summary>
+		/// Emergency Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("emergencyTitle")]
+		public virtual string EmergencyTitle => this.Value<string>(_publishedValueFallback, "emergencyTitle");
 
 		///<summary>
 		/// Full Name
@@ -104,6 +128,22 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("phoneNumber")]
 		public virtual string PhoneNumber => this.Value<string>(_publishedValueFallback, "phoneNumber");
+
+		///<summary>
+		/// Question Heading
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("questionHeading")]
+		public virtual string QuestionHeading => this.Value<string>(_publishedValueFallback, "questionHeading");
+
+		///<summary>
+		/// Question list
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.3.2+e7fae14")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("questionList")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.QAcontainer> QuestionList => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Web.Common.PublishedModels.QAcontainer>>(_publishedValueFallback, "questionList");
 
 		///<summary>
 		/// Your Question
